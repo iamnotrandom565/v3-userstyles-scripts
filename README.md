@@ -10,4 +10,5 @@ The current version is: 1206 (20 June 2024).
 
 ### Version history
 
-**Version 1206** First version
+- **Alpha 1206** First version
+- **Alpha 1206.2** Added a bunch of changes under the hood (note that it has a bug that places the reply button to the bottom)
