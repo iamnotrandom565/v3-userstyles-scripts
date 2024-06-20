@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name           2010 YouTube Comments Style for V3
+@namespace      github.com/openstyles/stylus
+@version        1206
+@description    Brings back the 2010 comments section style (V3 ONLY!!!)
+@author         Iamnotrandom565
+==/UserStyle== */
+
+@-moz-document domain("www.youtube.com") {
+    body {
+        font: 12px arial, sans-serif;
+    }
+    b {
+        font-weight: normal;
+    }
+    .distiller_yt_headline {
+        position: absolute;
+        left: -20px;
+        text-transform: capitalize;
+    }
+    .headline {
+        position: absolute;
+        bottom: 15px;
+        left: -30px;
+    }
+    .action_bar {
+        display: none;
+    }
+    .distiller_yt-thread:hover .action_bar {
+        display: inline-block;
+    }
+    .distiller_yt-thread:hover .headline {
+        bottom: 30px;
+    }
+    .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites {
+        display: none;
+    }
+    .distiller_yt-thread_user-content {
+        position: absolute;
+        right: 80px
+    }
+    .box.focus_caller {
+        width: 100%;
+        position: absolute;
+        right: 0;
+    }
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified {
+        display: none !important;
+        width: 0;
+        height: 0;
+    }
+    .distiller_yt-thread .sentiment:not(.active) .count {
+        /* position: relative;
+        bottom: 2px;
+        left: 0; */
+        display: none !important;
+    }
+    .oz-distiller-yt-like {
+        position: absolute;
+        left: 370px;
+    }
+    .oz-distiller-yt-dislike {
+        position: absolute;
+        left: 370px;
+    }
+    .reply-button {
+        position: absolute;
+        left: 490px;
+    }
+    .distiller_yt-post-option-menu {
+        position: absolute;
+        bottom: 28px;
+        left: 580px;
+    }
+}
