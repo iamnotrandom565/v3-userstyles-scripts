@@ -1,50 +1,53 @@
 /* ==UserStyle==
-@name           2010 YouTube Comments Style for V3
-@namespace      github.com/iamnotrandom565/v3-userstyles-scripts/
-@version        1206
+@name           2010 YouTube comments style for V3
+@namespace      github.com/openstyles/stylus
+@version        1206.2
 @description    Brings back the 2010 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
     body {
-        font: 12px arial, sans-serif;
+        font: 12px arial, sans-serif !important;
     }
-    b {
-        font-weight: normal;
+    b, h4, .profile_page-title {
+        font-weight: normal !important;
+    }
+    h4.watch-sidebar-head, b.all-comments {
+        color: #666 !important;
+        border-bottom: 1px solid #bbb !important;
     }
     .distiller_yt_headline {
         position: absolute;
-        left: -20px;
+        left: -10px;
         text-transform: capitalize;
     }
     .headline {
         position: absolute;
         bottom: 15px;
-        left: -30px;
+        left: -22px;
     }
     .action_bar {
         display: none;
     }
-    .distiller_yt-thread:hover .action_bar {
-        display: inline-block;
+    .distiller_yt-thread:hover .action_bar, .distiller_yt-post-option-menu {
+        display: inline-block !important;
     }
     .distiller_yt-thread:hover .headline {
         bottom: 30px;
     }
-    .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites {
-        display: none;
-    }
     .distiller_yt-thread_user-content {
+        width: 75%;
         position: absolute;
-        right: 80px
+        right: 70px
     }
     .box.focus_caller {
+        border: 1px solid black;
         width: 100%;
         position: absolute;
-        right: 0;
+        right: -8px;
     }
-    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified {
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites {
         display: none !important;
         width: 0;
         height: 0;
@@ -55,21 +58,47 @@
         left: 0; */
         display: none !important;
     }
-    .oz-distiller-yt-like {
-        position: absolute;
-        left: 370px;
-    }
-    .oz-distiller-yt-dislike {
-        position: absolute;
-        left: 370px;
-    }
-    .reply-button {
+    .sentiment.like {
         position: absolute;
         left: 490px;
+        width: 23px;
+    }
+    .sentiment.dislike {
+        position: absolute;
+        left: 521px;
+        width: 23px;
+    }
+    .reply-button {
+        font-weight: normal !important;
+        border-radius: 4px 0 0 4px !important; 
+        position: absolute;
+        left: 494px;
+    }
+    .sentiment.like, .sentiment.dislike, .reply-button {
+        top: 0 !important;
+        color: black !important;
+        text-decoration: none !important;
+        height: 24px;
+        border-radius: 4px;
+        background-image: linear-gradient(white, #eeeeee);
+        border: 1px #ccc solid;
     }
     .distiller_yt-post-option-menu {
+        height: 24px;
+        border-radius: 0 4px 4px 0;
+        background-image: linear-gradient(white, #eeeeee) !important;
+        border: 1px #ccc solid;
         position: absolute;
-        bottom: 28px;
-        left: 580px;
+        left: 581px;
+        top: 0 !important;
+    }
+    .sentiment.like:hover, .sentiment.dislike:hover, .reply-button:hover, .distiller_yt-post-option-menu:hover {
+        border: 1px #888 solid !important;
+        box-shadow: 0 0 4px #666;
+    }
+    .sentiment.like:active, .sentiment.dislike:active, .reply-button:active, .distiller_yt-post-option-menu:active {
+        border: 1px #888 solid !important;
+        box-shadow: 0 0 4px #666;
+        background-image: linear-gradient(#dddddd, white) !important;
     }
 }
