@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name           2010 YouTube comments style for V3
 @namespace      github.com/openstyles/stylus
-@version        1206.2
+@version        1621
 @description    Brings back the 2010 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
+    /* Main */
     body {
         font: 12px arial, sans-serif !important;
     }
@@ -30,6 +31,16 @@
     .action_bar {
         display: none;
     }
+    .distiller_yt-post-option-menu {
+        display: none;
+        height: 24px;
+        border-radius: 0 4px 4px 0;
+        background-image: linear-gradient(white, #eeeeee) !important;
+        border: 1px #ccc solid;
+        position: absolute;
+        left: 581px;
+        top: 0 !important;
+    }
     .distiller_yt-thread:hover .action_bar, .distiller_yt-post-option-menu {
         display: inline-block !important;
     }
@@ -43,14 +54,18 @@
     }
     .box.focus_caller {
         border: 1px solid black;
+        border-radius: 0;
         width: 100%;
         position: absolute;
         right: -8px;
     }
-    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites {
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line {
         display: none !important;
         width: 0;
         height: 0;
+    }
+    .profileLink, .distiller_yt-thread_user-content.run-link {
+        color: #4272db !important;
     }
     .distiller_yt-thread .sentiment:not(.active) .count {
         /* position: relative;
@@ -69,10 +84,12 @@
         width: 23px;
     }
     .reply-button {
+        padding-top: 4px;
+        height: 20px !important;
         font-weight: normal !important;
         border-radius: 4px 0 0 4px !important; 
-        position: absolute;
-        left: 494px;
+        position: absolute !important;
+        left: 552px;
     }
     .sentiment.like, .sentiment.dislike, .reply-button {
         top: 0 !important;
@@ -82,15 +99,6 @@
         border-radius: 4px;
         background-image: linear-gradient(white, #eeeeee);
         border: 1px #ccc solid;
-    }
-    .distiller_yt-post-option-menu {
-        height: 24px;
-        border-radius: 0 4px 4px 0;
-        background-image: linear-gradient(white, #eeeeee) !important;
-        border: 1px #ccc solid;
-        position: absolute;
-        left: 581px;
-        top: 0 !important;
     }
     .sentiment.like:hover, .sentiment.dislike:hover, .reply-button:hover, .distiller_yt-post-option-menu:hover {
         border: 1px #888 solid !important;
