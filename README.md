@@ -15,8 +15,11 @@ _The current version is: 1621.2 (21 June 2024)._
 - **Alpha 1206.2** Added a bunch of changes under the hood (note that it has a bug that places the reply button to the bottom)
 - **Alpha 1621**
 > The version numbering has been changed;
+>
 > The reply button position bug (refer to the post in Issues) has been fixed;
+> 
 > Buncha more changes to make it more accurate.
 - **Alpha 1621.2**
 > The like & dislike thread icons are now similar to their 2010 counterparts;
+> 
 > A new settings menu has been added, although it doesn't do anything _yet_.
