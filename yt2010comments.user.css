@@ -1,9 +1,10 @@
 /* ==UserStyle==
-@name           2010 YouTube comments style for V3
+@name           2010-2012 YouTube comments style for V3
 @namespace      github.com/openstyles/stylus
-@version        1621
-@description    Brings back the 2010 comments section style (V3 ONLY!!!)
+@version        1621.2
+@description    Brings back the 2010-2012 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
+@var            select          commentStyle        "Comments Style (doesn't do anything yet)"               ["AozoraE", "AozoraL", "Epic Panda", "Cosmic Panda"]
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
@@ -32,8 +33,9 @@
         display: none;
     }
     .distiller_yt-post-option-menu {
+        padding-top: 4px;
         display: none;
-        height: 24px;
+        height: 20px;
         border-radius: 0 4px 4px 0;
         background-image: linear-gradient(white, #eeeeee) !important;
         border: 1px #ccc solid;
@@ -76,12 +78,36 @@
     .sentiment.like {
         position: absolute;
         left: 490px;
-        width: 23px;
+        width: 24px;
+        text-align:center
+    }
+    .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+        width: 14px;
+        height: 14px;
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -223px -18px !important;
+    }
+    .sentiment.like:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -105px -80px !important;
+    }
+    .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -124px -50px !important;
     }
     .sentiment.dislike {
         position: absolute;
         left: 521px;
-        width: 23px;
+        width: 24px;
+        text-align: center;
+    }
+    .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+        width: 14px;
+        height: 14px;
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -0px -184px !important;
+    }
+    .sentiment.dislike:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -167px -48px !important;
+    }
+    .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -231px -119px !important;
     }
     .reply-button {
         padding-top: 4px;
