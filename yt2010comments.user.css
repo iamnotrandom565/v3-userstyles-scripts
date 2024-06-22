@@ -4,11 +4,11 @@
 @version        1621.2
 @description    Brings back the 2010-2012 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
-@var            select          commentStyle        "Comments Style (doesn't do anything yet)"               ["AozoraE", "AozoraL", "Epic Panda", "Cosmic Panda"]
+@var            select          CommentStyle        "Comments Style (doesn't do anything yet)"               ["Aozora", "Epic Panda", "Cosmic Panda"]
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
-    /* Main */
+    /*/== Main ==/*/
     body {
         font: 12px arial, sans-serif !important;
     }
@@ -24,13 +24,10 @@
         left: -10px;
         text-transform: capitalize;
     }
-    .headline {
-        position: absolute;
-        bottom: 15px;
-        left: -22px;
-    }
-    .action_bar {
-        display: none;
+    .headline:not(.oz-notification-content) {
+        position: absolute !important;
+        bottom: 15px !important;
+        left: -22px !important;
     }
     .distiller_yt-post-option-menu {
         padding-top: 4px;
@@ -42,6 +39,7 @@
         position: absolute;
         left: 581px;
         top: 0 !important;
+        z-index: 0;
     }
     .distiller_yt-thread:hover .action_bar, .distiller_yt-post-option-menu {
         display: inline-block !important;
@@ -54,17 +52,72 @@
         position: absolute;
         right: 70px
     }
-    .box.focus_caller {
+    .jfk-button.goog-inline-block.end.jfk-button-action {
+        border-radius: 4px;
+        width: auto;
+        color: #000;
+        font-weight: normal;
+        background-image: linear-gradient(white, #eeeeee) !important;
+        border: 1px #ccc solid;
+        position: absolute !important;
+        bottom: -10px !important;
+        left: 200px !important;
+        z-index: 1;
+    }
+    .jfk-button.goog-inline-block.distiller-button.yt-uix-tooltip.oz-tooltip.jfk-button-action {
+        border-radius: 4px;
+        width: auto;
+        color: #000;
+        font-weight: normal;
+        background-image: linear-gradient(white, #eeeeee) !important;
+        border: 1px #ccc solid;
+        position: absolute !important;
+        right: 0 !important;
+        bottom: -30px !important;
+        z-index: 1;
+    }
+    .oz-dismiss-button.oz-comment_post-dismiss {
+        background-image: none;
+        opacity: 1;
+        width: 50px;
+    }
+    .oz-dismiss-button.oz-comment_post-dismiss:after {
+        position: absolute !important;
+        bottom: -30px !important;
+        left: -70px !important;
+        opacity: 1 !important;
+        color: #4272db;
+        z-index: 1;
+        content: 'Cancel';
+    }
+    .sb_text_input {
+        background-color: #fff;
         border: 1px solid black;
         border-radius: 0;
         width: 100%;
         position: absolute;
-        right: -8px;
+        left: -80px;
+        resize: both;
+        overflow: auto;
+        z-index: 1;
     }
-    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line {
+    .box.focus_caller {
+        background-color: #fff;
+        border: 1px solid black;
+        border-radius: 0;
+        width: auto;
+        position: absolute;
+        left: -80px;
+        resize: both;
+        overflow: auto;
+        z-index: 1;
+    }
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line, .count_active, .sb-photo, .yt-uix-button.jfk-button.jfk-button-standard.goog-inline-block.distiller-button.distiller-dropdown-button, .yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-masthead-user-icon.yt-uix-button-empty, .masthead-expanded-sandbar, .masthead-expanded-lists-container {
         display: none !important;
-        width: 0;
-        height: 0;
+        width: 0 !important;
+        height: 0 !important;
+        font-size: 0 !important;
+        opacity: 0 !important;
     }
     .profileLink, .distiller_yt-thread_user-content.run-link {
         color: #4272db !important;
@@ -75,21 +128,24 @@
         left: 0; */
         display: none !important;
     }
+    .action_bar {
+        display: none;
+    }
+    .action_bar:hover, .action_bar:hover .distiller_yt-post-option-menu {
+        display: inline-block;
+    }
     .sentiment.like {
+        width: 24px;
+        text-align: center;
         position: absolute;
         left: 490px;
-        width: 24px;
-        text-align:center
     }
     .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
         width: 14px;
         height: 14px;
-        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -223px -18px !important;
-    }
-    .sentiment.like:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
         background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -105px -80px !important;
     }
-    .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+    .sentiment.like:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like, .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
         background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -124px -50px !important;
     }
     .sentiment.dislike {
@@ -101,12 +157,9 @@
     .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
         width: 14px;
         height: 14px;
-        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -0px -184px !important;
-    }
-    .sentiment.dislike:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
         background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -167px -48px !important;
     }
-    .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+    .sentiment.dislike:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike, .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
         background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -231px -119px !important;
     }
     .reply-button {
@@ -135,4 +188,17 @@
         box-shadow: 0 0 4px #666;
         background-image: linear-gradient(#dddddd, white) !important;
     }
+/*  == INFO ==
+    
+    === COPYRIGHT ===
+    When creating an user style based on this, PLEASE CREDIT @iamnotrandom565!!!
+    
+    === TODO ===
+    - Make notifications work again
+    - Make the options work
+    - Fix the live chat issue
+    - Fix the objects not moving when a draggable box is overlapping 
+    - Make the reply box move to the comment box
+    - Make the reply sections visible again, and make it blend in to the normal comments
+    - Make the reply button have the 2011 icon */
 }
