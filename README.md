@@ -9,7 +9,7 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: Dev 1626 (26 June 2024)._
+_The current version is: Dev 1626.2 (26 June 2024)._
 
 - ### Alpha 1206
 > First version
@@ -47,3 +47,7 @@ _The current version is: Dev 1626 (26 June 2024)._
 > 
 > Removed live chat (for now)
 
+- **Dev 1626.2**
+> Some changes that I forgot to make before
+>
+> Live chats can be enabled by clicking a button in the settings
