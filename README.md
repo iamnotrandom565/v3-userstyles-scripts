@@ -9,9 +9,11 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: 1622 (22 June 2024)._
+_The current version is: Dev 1626 (26 June 2024)._
 
-- **Alpha 1206** First version
+- ### Alpha 1206
+> First version
+
 - **Alpha 1206.2** Added a bunch of changes under the hood (note that it has a bug that places the reply button to the bottom)
 - **Alpha 1621**
 > The version numbering has been changed;
@@ -31,3 +33,17 @@ _The current version is: 1622 (22 June 2024)._
 > The cancel and comment buttons have been changed to their 2011 counterparts;
 >
 > Your channel profile picture is no longer visible in the topbar.
+
+
+
+- ### Dev 1626
+> The user style is now out of the alpha phase!
+> 
+> Fixed A BUNCH of bugs
+> 
+> Cosmic Panda AND Epic Panda layouts have been added! (even though they're the same)
+> 
+> Added more options in the settings
+> 
+> Removed live chat (for now)
+
