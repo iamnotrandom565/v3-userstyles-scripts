@@ -300,7 +300,7 @@
             display: none !important;
         }
     }
-    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line, .sb-photo, .yt-uix-button.jfk-button.jfk-button-standard.goog-inline-block.distiller-button.distiller-dropdown-button, .yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-masthead-user-icon.yt-uix-button-empty, .masthead-expanded-sandbar, .masthead-expanded-lists-container, #yt-masthead-user .sb-notif-on .yt-uix-button-content, .annotation.iv-branding, .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites, .iv-cards-notif>button div {
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line, .sb-photo, .yt-uix-button.jfk-button.jfk-button-standard.goog-inline-block.distiller-button.distiller-dropdown-button, .yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-masthead-user-icon.yt-uix-button-empty, .masthead-expanded-sandbar, .masthead-expanded-lists-container, #yt-masthead-user .sb-notif-on .yt-uix-button-content, .annotation.iv-branding, .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites, .iv-cards-notif>button div, .oz_widget_holder {
         display: none !important;
         width: 0 !important;
         height: 0 !important;
