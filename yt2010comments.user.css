@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           2010-2012 YouTube comments style for V3
-@namespace      github.com/openstyles/stylus
-@version        Dev 1626
+@namespace      github.com/iamnotrandom565/v3-userstyles-scripts
+@version        1626.2
 @description    Brings back the 2010-2012 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
 @preprocessor   less
 @var            select          CommentStyle        "Comments Style"               ["Aozora", "Epic Panda", "Cosmic Panda"]
 @var            checkbox        Resizable           "Enable resizing on commenting boxes (Broken, please report issues in my Github page)" 0
 @var            checkbox        XPRM                "Enable experimental features"                                                         0
+@var            checkbox        LiveChatVis         "Make live chats visible"                                                              0
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
@@ -145,32 +146,56 @@
     .distiller_yt-thread_user-content {
         width: 75%;
         position: absolute;
-        right: 70px
+        right: 70px;
+    }
+    .livechat_message .distiller_yt-thread_user-content.yt-uix-expander-collapsed {
+        right: initial;
+        width: initial;
     }
     .jfk-button.goog-inline-block.end.jfk-button-action {
         border-radius: 4px;
         width: auto;
-        color: #000;
         font-weight: normal;
-        background-image: linear-gradient(white, #eeeeee) !important;
-        border: 1px #ccc solid;
         position: absolute !important;
         bottom: -10px !important;
         left: 200px !important;
         z-index: 1;
+        & when (@CommentStyle = Aozora) {
+            color: #000;
+            background-image: linear-gradient(white, #eeeeee) !important;
+            border: 1px #ccc solid;
+        }
+        & when not (@CommentStyle = Aozora) {
+            border: 1px #ccc solid !important;
+            border-bottom-color: #aaa !important;
+            box-shadow: inset 0 0 1px #fff;
+            background: linear-gradient(to bottom, #fafafa 0, #dcdcdc 100%) !important;
+            color: #555;
+            text-shadow: 0 1px 0 #fff;
+        }
     }
     .jfk-button.goog-inline-block.distiller-button.yt-uix-tooltip.oz-tooltip.jfk-button-action {
         display: inline-block !important;
         border-radius: 4px;
         width: auto;
-        color: #000;
         font-weight: normal;
-        background-image: linear-gradient(white, #eeeeee) !important;
-        border: 1px #ccc solid;
         position: absolute !important;
         right: 70px !important;
         bottom: -60px !important;
         z-index: 256;
+        & when (@CommentStyle = Aozora) {
+            color: #000;
+            background-image: linear-gradient(white, #eeeeee) !important;
+            border: 1px #ccc solid;
+        }
+        & when not (@CommentStyle = Aozora) {
+            border: 1px #ccc solid !important;
+            border-bottom-color: #aaa !important;
+            box-shadow: inset 0 0 1px #fff;
+            background: linear-gradient(to bottom, #fafafa 0, #dcdcdc 100%) !important;
+            color: #555;
+            text-shadow: 0 1px 0 #fff;
+        }
     }
     .oz-dismiss-button.oz-comment_post-dismiss {
         background-image: none;
@@ -270,7 +295,12 @@
         top: 72px;
         left: 260px !important;
     }
-    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line, .sb-photo, .yt-uix-button.jfk-button.jfk-button-standard.goog-inline-block.distiller-button.distiller-dropdown-button, .yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-masthead-user-icon.yt-uix-button-empty, .masthead-expanded-sandbar, .masthead-expanded-lists-container, .live_chat_box_iframe_holder, #yt-masthead-user .sb-notif-on .yt-uix-button-content, .annotation.iv-branding, .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites {
+    .live_chat_box_iframe_holder {
+        & when (@LiveChatVis = 0) {
+            display: none !important;
+        }
+    }
+    .callout, .thumbnail, .distiller_yt-thread_avatar, .distiller_stream-options, .sentiment.heart.active, .checkbox-on-off, .comments, .separator, .pinned-post, .profileVerified, .cssAction_Expander.yt-uix-expander-head.sprites, .watch-sidebar-separation-line, .sb-photo, .yt-uix-button.jfk-button.jfk-button-standard.goog-inline-block.distiller-button.distiller-dropdown-button, .yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-masthead-user-icon.yt-uix-button-empty, .masthead-expanded-sandbar, .masthead-expanded-lists-container, #yt-masthead-user .sb-notif-on .yt-uix-button-content, .annotation.iv-branding, .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander.sprites, .iv-cards-notif>button div {
         display: none !important;
         width: 0 !important;
         height: 0 !important;
