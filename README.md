@@ -9,7 +9,7 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: Dev 1626.3 (26 June 2024)._
+_The current version is: Dev 1627 (27 June 2024)._
 
 - ### Alpha 1206
 > First version
