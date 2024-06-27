@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           2010-2012 YouTube comments style for V3
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        1626.3
+@version        1627
 @description    Brings back the 2010-2012 comments section style (V3 ONLY!!!)
 @author         Iamnotrandom565
 @preprocessor   less
@@ -280,10 +280,6 @@
         & when not (@CommentStyle = Aozora) {
             background: url(https://s.ytimg.com/yt/img/refresh/body_noise_2x-vflQP8XB1.png) !important;
         }
-    }
-    .box.focus_caller:active {
-            display: none !important;
-    
     }
     .distiller_yt-sb-container {
         padding-bottom: 30px;
