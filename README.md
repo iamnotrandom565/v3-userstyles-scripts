@@ -56,3 +56,6 @@ _The current version is: Dev 1626.3 (26 June 2024)._
 > Changed part of a line of code
 >
 > That's it!
+
+- **Dev 1627**
+> Solved a bug mentioned in Issues
