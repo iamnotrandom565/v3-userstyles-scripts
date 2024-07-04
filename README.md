@@ -2,7 +2,7 @@
 
 ## yt2010comments.user.css
 
-**Please note that it's currently still in Alpha, so things might be broken or unfinished.**
+**Please note that it's currently still in Dev, so things might be broken or unfinished.**
 
 This user style file is supposed to bring back the style of the old YouTube comments section style (around 2010 to 2012).
 It requires the Vorapis 3 extension to function, and it works best with StarTube's Aozora, Epic Panda or Cosmic Panda layouts with expCommentsFullWidth turned off.
@@ -59,3 +59,11 @@ _The current version is: Dev 1627 (27 June 2024)._
 
 - **Dev 1627**
 > Solved a bug mentioned in Issues
+
+## ytcosmicchannels.user.css
+
+**Please note that it's really unfinished, please report bugs in Issues**
+
+This userstyle makes channel pages look like their 2012 counterparts.
+It requires Vorapis 3 to function, and works best with StarTube's Cosmic Panda layout.
+_The current version is: 174._
