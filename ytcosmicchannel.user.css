@@ -1,0 +1,123 @@
+/* ==UserStyle==
+@name           Cosmic Panda Channels for V3
+@namespace      github.com/iamnotrandom565/v3-userstyles-scripts
+@version        174
+@description    Makes channel pages look like their 2012 counterparts
+@author         Iamnotrandom565
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/channel/") {
+    html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        background: transparent;
+    }
+    #c4-header-bg-container.has-custom-banner {
+        display: none;
+    }
+    .yt-subscription-button-subscriber-count-branded-horizontal, .qualified-channel-title-badge, #header-links {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+    }
+    #content {
+        width: 970px;
+        text-align: left;
+    }
+    #page {
+        background-color: #666;
+        background-repeat: repeat;
+    }
+    .branded-page-v2-header {
+        overflow: hidden;
+        background: #202020 url(//web.archive.org/web/20120405201105im_/http://s.ytimg.com/yt/img/channels/bg-channel-header-vfl6TeHdT.png) repeat-x;
+        margin-top: 20px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -moz-border-radius-bottomright: 0;
+        -webkit-border-bottom-right-radius: 0;
+        border-bottom-right-radius: 0;
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-bottom-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .channel-header .primary-header-contents p, .channel-header .primary-header-contents span {
+        color: white !important;
+    }
+    span.qualified-channel-title-text {
+        font-weight: normal !important;
+            
+        margin: 0;
+        max-width: 420px;
+        line-height: 1;
+        vertical-align: bottom;
+        overflow: hidden;
+        white-space: nowrap;
+        word-wrap: normal;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    } 
+    .qualified-channel-title.ellipsized .qualified-channel-title-wrapper {
+        z-index: 1;
+            
+        float: left;
+        padding: 14px 0;
+    }
+    .channel-header .primary-header-contents {
+        padding: 10px 25px 10px 8px;
+    }
+    #channel-subheader {
+        background: #444;
+        -moz-box-shadow: inset 0 1px 2px rgb(34, 34, 34);
+        -ms-box-shadow: inset 0 1px 2px rgb(34, 34, 34);
+        -webkit-box-shadow: inset 0 1px 2px rgb(34, 34, 34);
+        box-shadow: inset 0 1px 2px rgb(34, 34, 34);
+        background-image: -moz-linear-gradient(bottom, #323232 0, #4f4f4f 70%);
+        background-image: -ms-linear-gradient(bottom, #323232 0, #4f4f4f 70%);
+        background-image: -o-linear-gradient(bottom, #323232 0, #4f4f4f 70%);
+        background-image: -webkit-gradient(linear, left bottom, left center, color-stop(0, #323232), color-stop(70%, #4f4f4f));
+        background-image: -webkit-linear-gradient(bottom, #323232 0, #4f4f4f 70%);
+        background-image: linear-gradient(to center, #323232 0, #4f4f4f 70%);
+        filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4f4f4f,endColorStr=#323232);
+    }
+    .branded-page-v2-col-container {
+        overflow: hidden;
+        margin: 0 auto 50px auto;
+        width: 970px;
+        text-align: left;
+        .branded-page-v2-col-container-inner {
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 60px;
+            background: url(//web.archive.org/web/20120709145841im_/http://s.ytimg.com/yt/img/channels/bg-layout-2col-ltr-vflzXzuyp.png) repeat-y #ccc;
+            min-height: 550px;
+            -moz-border-radius-bottomleft: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            -moz-border-radius-bottomright: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+    .channel-header-profile-image-container {
+        opacity: 1;
+        z-index: 1;
+        top: 200px;
+        left: auto;
+        float: left;
+        position: relative;
+        margin: 0 15px 0 0;
+        width: 55px !important;
+        height: 55px !important;
+        overflow: hidden;
+        border-radius: 1px;
+        .channel-header-profile-image {
+            width: 55px !important;
+            height: 55px !important;
+        }
+    }
+}
