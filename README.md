@@ -65,7 +65,9 @@ _The current version is: Dev 175 (5 July 2024)._
 
 ## ytcosmicchannels.user.css
 
-**Please note that it's really unfinished, please report bugs in Issues**
+**Please note that since the next StarTube update will include Cosmic Panda-styled channel pages, this will become obsolete soon.**
+
+**Please also note that it's really unfinished, please report bugs in Issues**
 
 This userstyle makes channel pages look like their 2012 counterparts.
 It requires Vorapis 3 to function, and works best with StarTube's Cosmic Panda layout.
