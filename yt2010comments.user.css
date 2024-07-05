@@ -1,8 +1,8 @@
 /* ==UserStyle==
-@name           2010-2012 YouTube comments style for V3
+@name           2010-2012 YouTube Comments for V3
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        1627
-@description    Brings back the 2010-2012 comments section style (V3 ONLY!!!)
+@version        175
+@description    Brings back the 2010-2012 comments section style
 @author         Iamnotrandom565
 @preprocessor   less
 @var            select          CommentStyle        "Comments Style"               ["Aozora", "Epic Panda", "Cosmic Panda"]
@@ -27,7 +27,7 @@
         & when not (@CommentStyle = Aozora) {
             display: none !important;
             width: 0 !important;
-       height: 0 !important;
+            height: 0 !important;
             opacity: 0 !important;
             font-size: 0 !important;
         }
@@ -197,6 +197,17 @@
             text-shadow: 0 1px 0 #fff;
         }
     }
+    .share.focus_caller {
+        .run.run-text {
+            font-size: 0;
+        }
+        span::after {
+            font: 12px arial, sans-serif;
+            display: inline-block;
+            color: #aaa;
+            content: 'Respond to this video...'
+        }
+    }
     .oz-dismiss-button.oz-comment_post-dismiss {
         background-image: none;
         opacity: 1;
@@ -212,7 +223,8 @@
         content: 'Cancel';
     }
     .sb_text_input {
-        width: 480px;
+        width: 462px;
+        height: 40px;
         position: absolute;
         left: -80px;
         z-index: 1;
@@ -463,12 +475,6 @@
     When creating an user style based on this, PLEASE CREDIT @iamnotrandom565!!!
     
     === TODO ===
-    - Make a Cosmic Panda theme [x]
-    - Make notifications work again [x]
-    - Replace the notification icon with mail [x]
-    - Remove live chats [x]
-    - Make the like number visible again [Not accurate but it's better than nothing ¯\_(ツ)_/¯]
-    - Fix the objects not moving when a resizable box is overlapping them [made it an option]
-    - Make the cancel and post comment visible somehow [x]
-    - Make the reply button have the 2011 icon [x]  */
+    
+    */
 }
