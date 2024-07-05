@@ -9,7 +9,7 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: Dev 1627 (27 June 2024)._
+_The current version is: Dev 175 (5 July 2024)._
 
 - ### Alpha 1206
 > First version
@@ -59,6 +59,9 @@ _The current version is: Dev 1627 (27 June 2024)._
 
 - **Dev 1627**
 > Solved a bug mentioned in Issues
+
+- **Dev 175**
+> Replaced "Share your thoughts" to "Respond to this video..."
 
 ## ytcosmicchannels.user.css
 
