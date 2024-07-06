@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           2010-2012 YouTube Comments for V3
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        175
+@version        177
 @description    Brings back the 2010-2012 comments section style
 @author         Iamnotrandom565
 @preprocessor   less
@@ -32,6 +32,9 @@
             font-size: 0 !important;
         }
     }
+    #watch-discussion {
+        padding: none;
+    }
     .distiller_yt-thread:hover {
         & when (@CommentStyle = Aozora) and (@XPRM = 1) {
             background-color: #eee !important;
@@ -54,13 +57,13 @@
     }
     .distiller_yt_headline {
         position: absolute;
-        left: -10px;
+        left: 5px;
         text-transform: capitalize;
     }
     .distiller_yt-thread .headline {
         position: absolute !important;
         bottom: 15px !important;
-        left: -22px !important;
+        left: -8px !important;
     }
     .distiller_yt-post-option-menu {
         .oz-sprite {
@@ -87,14 +90,14 @@
         top: 0 !important;
         position: absolute;
         & when (@CommentStyle = Aozora) {
-            left: 587px;
+            left: 577px;
             padding-top: calc(1.8333em / 8);
             height: calc(1.8333em / 1.125);
             background-image: linear-gradient(white, #eeeeee) !important;
             border: 1px #ccc solid;
         }
         & when not (@CommentStyle = Aozora) {
-            left: 587px;
+            left: 577px;
             width: 10px;
             text-align: center;
             border: 1px #ccc solid !important;
@@ -146,7 +149,7 @@
     .distiller_yt-thread_user-content {
         width: 75%;
         position: absolute;
-        right: 70px;
+        right: 55px;
     }
     .livechat_message .distiller_yt-thread_user-content.yt-uix-expander-collapsed {
         right: initial;
@@ -277,7 +280,7 @@
         border-radius: 0;
         width: 480px;
         position: absolute;
-        left: -80px;
+        left: -64px;
         z-index: 1;
         & when (@Resizable = 1) {
             resize: both;
@@ -339,11 +342,11 @@
         position: absolute;
         
         & when (@CommentStyle = Aozora) {
-            left: 501px !important;
+            left: 491px !important;
             width: 16px;
         }
         & when not (@CommentStyle = Aozora) {
-            left: 492px;
+            left: 482px;
             border-radius: 3px 0 0 3px;
             width: 18px;
         }
@@ -359,12 +362,12 @@
             background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-refresh-vflIJtcPd.png) -157px -244px !important;
         }
     }
-    .sentiment.like:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like, .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+    .sentiment.like:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like, .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like, .sentiment.like.active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
         & when (@CommentStyle = Aozora) {
             background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -124px -50px !important;
         }
     }
-    .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
+    .sentiment.like:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like, .sentiment.like.active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-like {
         & when not (@CommentStyle = Aozora) {
             background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-refresh-vflIJtcPd.png) -35px -264px !important;
         }
@@ -373,11 +376,11 @@
         position: absolute;
         text-align: center;
         & when (@CommentStyle = Aozora) {
-            left: 527px;
+            left: 517px;
             width: 16px;
         }
         & when not (@CommentStyle = Aozora) {
-            left: 519px;
+            left: 509px;
             border-radius: 0 3px 3px 0;
             width: 18px;
         }
@@ -393,12 +396,12 @@
             opacity: 0.6 !important;
         }
     }
-    .sentiment.dislike:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike, .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+    .sentiment.dislike:hover .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike, .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike, .sentiment.dislike.active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
         & when (@CommentStyle = Aozora) {
             background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -231px -119px !important;
         }
     }
-    .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
+    .sentiment.dislike:active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike, .sentiment.dislike.active .oz-sprite.oz-sprite-img-cleardot.oz-distiller-yt-dislike {
         & when not (@CommentStyle = Aozora) {
             background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-refresh-vflIJtcPd.png) -18px -121px !important;
             opacity: 1 !important;
@@ -412,13 +415,13 @@
             height: calc(1.8333em / 2.3) !important;
             font-weight: normal !important;
             font-size: 12px !important;
-            left: 552px;
+            left: 542px;
             text-align: right !important;
         }
         & when not (@CommentStyle = Aozora) {
             padding-top: 9px !important;
             height: 12px !important;
-            left: 550px;
+            left: 540px;
             color: #555 !important;
         }
     }
@@ -475,6 +478,12 @@
     When creating an user style based on this, PLEASE CREDIT @iamnotrandom565!!!
     
     === TODO ===
-    
-    */
+    - Make a Cosmic Panda theme [x]
+    - Make notifications work again [x]
+    - Replace the notification icon with mail [x]
+    - Remove live chats [x]
+    - Make the like number visible again [Not accurate but it's better than nothing ¯\_(ツ)_/¯]
+    - Fix the objects not moving when a resizable box is overlapping them [made it an option]
+    - Make the cancel and post comment visible somehow [x]
+    - Make the reply button have the 2011 icon [x]  */
 }
