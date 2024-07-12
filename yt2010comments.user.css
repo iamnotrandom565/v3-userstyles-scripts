@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           2010-2012 YouTube Comments for V3
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        177
+@version        1712
 @description    Brings back the 2010-2012 comments section style
 @author         Iamnotrandom565
 @preprocessor   less
@@ -9,6 +9,7 @@
 @var            checkbox        Resizable           "Enable resizing on commenting boxes (Broken, please report issues in my Github page)" 0
 @var            checkbox        XPRM                "Enable experimental features"                                                         0
 @var            checkbox        LiveChatVis         "Make live chats visible"                                                              0
+@var            checkbox        OldDropdownFix      "Check this if you use the 2010 - 2012 dropdown user style"                            0
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
@@ -24,13 +25,19 @@
         border-bottom: 1px solid #ccc !important;
     }
     h4.watch-sidebar-head {
+        font-size: 0 !important;
         & when not (@CommentStyle = Aozora) {
             display: none !important;
             width: 0 !important;
             height: 0 !important;
             opacity: 0 !important;
-            font-size: 0 !important;
         }
+    }
+    h4.watch-sidebar-head::after & when (@CommentStyle = Aozora) {
+        font: 12px normal arial, sans-serif;
+        color: #666;
+        border-bottom: 1px solid #ccc;
+        content: 'Suggestions';
     }
     #watch-discussion {
         padding: none;
@@ -51,9 +58,12 @@
         display: none !important;
     }
     #sb-button-notify {
-        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -302px -70px !important;
+        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -302px -69px !important;
         width: 12px !important;
         height: 15px !important;
+        & when (@OldDropdownFix = 1) {
+            top: 5px;
+        }
     }
     .distiller_yt_headline {
         position: absolute;
@@ -296,6 +306,9 @@
             background: url(https://s.ytimg.com/yt/img/refresh/body_noise_2x-vflQP8XB1.png) !important;
         }
     }
+    .distiller_yt-sb:not(.hid) .box.focus_caller {
+        display: none !important;
+    }
     .distiller_yt-sb-container {
         padding-bottom: 30px;
     }
@@ -473,17 +486,14 @@
         }
     }
 /*  == INFO ==
+     This user style file is supposed to bring back the style of the old YouTube comments section style (around 2010 to 2012).
+     It requires the Vorapis 3 extension to function, and it works best with StarTube's Aozora, Epic Panda or Cosmic Panda layouts with expCommentsFullWidth turned off.
     
-    === COPYRIGHT ===
-    When creating an user style based on this, PLEASE CREDIT @iamnotrandom565!!!
+    == COPYRIGHT ==
+     You're allowed to modify & republish my work, as long as you credit @iamnotrandom565 and my github repository.
     
-    === TODO ===
-    - Make a Cosmic Panda theme [x]
-    - Make notifications work again [x]
-    - Replace the notification icon with mail [x]
-    - Remove live chats [x]
-    - Make the like number visible again [Not accurate but it's better than nothing ¯\_(ツ)_/¯]
-    - Fix the objects not moving when a resizable box is overlapping them [made it an option]
-    - Make the cancel and post comment visible somehow [x]
-    - Make the reply button have the 2011 icon [x]  */
+    == TODO ==
+    - Replace "Up Next" to "Suggestions" [x]
+    - Fix the cancel and post comment button placement [x]
+*/
 }
