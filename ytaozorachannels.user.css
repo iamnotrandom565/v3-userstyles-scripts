@@ -1,0 +1,392 @@
+/* ==UserStyle==
+@name           V3 Aozora Channel Pages
+@namespace      github.com/iamnotrandom565/v3-userstyles-scripts
+@version        179
+@description    Brings back the 2011 styled channel pages
+@author         Iamnotrandom565
+preprocessor    less
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/channel/"), url-prefix("https://www.youtube.com/user/"), url-prefix("https://www.youtube.com/@") {
+    #channels3 {
+        padding-top: 150px;
+        width: 960px;
+        margin: auto;
+    }
+    #c3-header {
+        display: flex;
+        position: relative;
+        flex-wrap: nowrap;
+        overflow: hidden !important;
+    }
+    .c3-header-left.flex-bar {
+        position: relative;
+        background-color: #666;
+        height: 36px;
+        padding: 4px;
+        border-radius: 2px 0 0 2px;
+        
+        #c3-channel-pfp, #c3-channel-pfp img {
+            height: 36px;
+            width: 36px;
+        }
+        .c3-name {
+            font-size: 16px;
+            font-weight: bold;
+            float: left;
+            padding: 0.4em 0 32px 0;
+            white-space: nowrap;
+        }
+        .yt-uix-button-subscribe-branded {
+            border-color: #ecc101 !important;
+            background: #ffe971 !important;
+            background-image: -moz-linear-gradient(top, #fff9c1, #fed81c) !important;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#fff9c1), to(#fed81c)) !important;
+            
+            .subscribe-label {
+                font-weight: bold !important;
+            }
+        }
+        .yt-uix-button-subscribe-branded:hover {
+            border-color: #630 !important;
+            outline: 0;
+            -moz-box-shadow: 0 0 3px #999;
+            -webkit-box-shadow: 0 0 3px #999;
+            box-shadow: 0 0 3px #999;
+        }
+        .yt-uix-button-subscribe-branded:active {
+            border-color: #630;
+            background-image: -moz-linear-gradient(top, #ffe667, #ffffff);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#ffe667), to(#ffffff));
+        }
+        .yt-subscription-button-subscriber-count-branded-horizontal {
+            background-color: transparent;
+            background-image: none;
+            
+            position: absolute;
+            bottom: -0.5px;
+            right: -24px;
+            
+            width: 0;
+            height: 0;
+            border: 1px solid #666;
+            border-width: 23.25px 0 23px 12px;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            font-size: 0;
+            line-height: 0;
+        }
+    }
+    #c3-header-upper {
+        padding: 5px;
+        padding-left: 3.2px;
+        padding-right: 12px;
+        border-radius: 4px 0 0 0;
+        
+        background-image: none;
+        background-color: #fff;
+        border: 6px solid #333;
+        border-right: none;
+        
+        height: 40px;
+    }
+    #c3-header-lower {
+        padding: 10px 8px;
+        
+        box-shadow: none;
+        
+        background-image: none;
+        background-color: #fff;
+        border: 6px solid #333;
+        border-left: none;
+        border-radius: 0 4px 0 0;
+        width: 100%;
+        height: 30px;
+    }
+    .c3-tab:not(.active) {
+        color: #666;
+        
+        height: 20px;
+        padding: 4px 7px;
+        margin: 0 10px;
+    }
+    .c3-tab:focus {
+        background-color: #e7ecfa;
+        outline: 3px solid #e7ecfa;
+        height: 20px;
+        padding: 4px 7px;
+        margin: 0 10px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        
+        text-shadow: none;
+    }
+    .c3-tab:hover {
+        color: #fff;
+        background-image: none;
+        background-color: #aaa;
+        
+        height: 20px;
+        padding: 4px 7px;
+        margin: 0 10px;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        
+        box-shadow: none;
+        text-shadow: none;
+    }
+    #c3-tabs .active {
+        background-image: none;
+        background-color: #666;
+        color: #fff;
+        
+        text-shadow: none;
+        box-shadow: none;
+        border: none;
+        height: 20px;
+        
+        display: block;
+        padding: 4px 7px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0 10px;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    #c3-below {
+        position: relative;
+        background-image: none;
+        background-color: #fff;
+        border: 6px solid #333;
+        border-top: none;
+        overflow: visible;
+        margin-bottom: 75%;
+        
+        #c3-content {
+            border-right: 6px solid #333;
+            
+            .yt-ui-ellipsis.yt-uix-expander-head {
+                line-height: 14px;
+            }
+            
+            .video-player-view-component a {
+                font-size: 0;
+            }
+            .video-player-view-component a[change_text="Show less"]::after {
+                font: 12px arial, sans-serif;
+                color: #666;
+                content: '(more info)'
+            }
+            .video-player-view-component a[change_text="Show more"]::after {
+                font: 12px arial, sans-serif;
+                color: #666;
+                content: '(less info)'
+            }
+        }
+        #c3-content-items {
+            &:not(:has(.c3-feed-item)) {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 515px;
+                width: 300px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 5px 0 5px 0;
+                margin-top: 12px;
+            }
+            .c3-featured-list {
+                width: 95%;
+            }
+            #c3-featured-list {
+                padding: 5px;
+            }
+        }
+        #c3-feed-tab.active #c3-content-items {
+            position: static;
+            height: auto;
+            width: auto;
+            padding: 0;
+        }
+        #c3-sidebar {
+            /* width: 100%;
+            position: absolute; */
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .c3 .blogger-video {
+        z-index: 100;
+        font-size: 11px;
+        
+        height: 68px;
+        position: relative;
+        
+        .tile {
+            padding: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+        }
+        
+        .video-overview {
+            position: absolute;
+            top: 0;
+            left: 116px;
+            margin-top: 4px;
+            overflow: hidden;
+            white-space: normal;
+            max-height: 30px;
+            _height: 30px;
+            margin-bottom: 3px;
+            background-color: inherit;
+            
+            padding: 0;
+            
+            color: #666 !important;
+            text-decoration: none !important;
+            
+            .title.video-title {
+                display: block;
+                font-family: arial, sans-serif;
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 15px;
+                _height: 30px;
+            }
+        }
+        a.tile-link-block {
+            display: inline-block;
+        }
+        .video-item-content {
+            float: left;
+            padding: 0;
+        }
+        img, .ux-thumb {
+            width: 96px !important;
+            height: 54px !important;
+        }
+        .ux-thumb {
+            margin-right: 6px;
+            float: left;
+            
+            padding: 4px;
+            background: #fff;
+            overflow: hidden;
+            border: 1px solid #666;
+            border-radius: 3px;
+        }
+        .video-details {
+            position: absolute;
+            top: 20%;
+            left: 116px;
+        }
+        .video-details, .video-view-count {
+            color: #000 !important;
+            padding-right: 0;
+        }
+        .video-view-count::after {
+            content: '-';
+        }
+        .video-date {
+            display: inline-block !important;
+        }
+    }
+    .c3-sidebar-section:not(#c3-featured-channels-slot) {
+        position: absolute;
+        width: 640px;
+        top: calc(100% + 1px);
+        right: -6px;
+        
+        z-index: 1939239293;
+        border: 6px solid #333;
+        border-radius: 4px;
+        background-color: #fff;
+        
+        padding: 12px;
+        box-sizing: border-box;
+        
+        .c3-sidebar-header {
+            font-size: 150%;
+            padding-bottom: 6px;
+            color: #333;
+        }
+        #c3-description {
+            color: #444;
+        }
+    }
+    #c3-featured-channels-slot {
+        position: absolute;
+        width: 290px;
+        top: calc(100% + 1px);
+        left: -5px;
+        padding: 12px;
+        
+        z-index: 1939239293;
+        border: 6px solid #333;
+        border-radius: 4px;
+        background-color: #fff;
+        
+        .c3-sidebar-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .c3-sidebar-header {
+            color: #333;
+            font-size: 150%;
+            padding-bottom: 12px;
+        }
+        .c3-featured-channel .tile {
+            display: block;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            padding-bottom: 30px;
+        }
+        .c3-featured-channel {
+            position: relative;
+            width: 50%;
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+        .c3-featured-channel .title {
+            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #666 !important;
+            position: absolute;
+            top: -22px;
+            left: 0;
+            font: 12px arial, sans-serif;
+        }
+        .c3-featured-channel .subscriber-count {
+            color: #444;
+        }
+    }
+    
+    #c3-search, #c3-header-meta, .yt-subscription-button-subscriber-count-branded-horizontal::before, .yt-subscription-button-subscriber-count-branded-horizontal::after, .c3-featured-playall, #c3-content-header, .c3 .blogger-video .video-item-description, .c3 .blogger-video .video-owner, .c3-featured-content .yt-lockup.yt-lockup-tile, #footer-container, #c3-featured-playlists-slot, #c3-sidebar-subscribe {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+        font-size: 0 !important;
+    }
+/*  == INFO ==
+     This userstyle brings back the 2010 - 2012 channel page style.
+     It requires V3 to function and it works best with StarTube's Aozora 2011 layout.
+    
+    == COPYRIGHT ==
+     You're allowed to modify & republish my work, as long as you credit @iamnotrandom565 and my github repository.
+    
+    == TODO ==
+     
+*/
+}
