@@ -9,7 +9,7 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: Dev 177 (7 July 2024)._
+_The current version is: Dev 1712 (12 July 2024)._
 
 - ### Alpha 1206
 > First version
@@ -65,6 +65,13 @@ _The current version is: Dev 177 (7 July 2024)._
 
 - **Dev 177**
 > Fixed a bug
+
+- **Dev 1712**
+> Changed the copyright
+> 
+> Changed "Up Next" to "Suggestions"
+> 
+> Cancel and Post buttons don't overlap with other comments
 
 ## ytcosmicchannels.user.css
 
