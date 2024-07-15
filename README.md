@@ -7,7 +7,17 @@
 This user style is supposed to bring back the old Channels 2.0 layout (around 2007[?] - 2012).
 It requires the Vorapis 3 extension to function, and works best with StarTube's Aozora 2011 layout.
 
-_The current version is: Alpha 1713 (13 July 2024)._
+### Version history
+
+_The current version is: Alpha 1715 (15 July 2024)._
+
+- ### Alpha 1713
+
+> First version
+
+- *Alpha 1715
+
+> Added channel search (non functional)
 
 ## yt2010comments.user.css
 
