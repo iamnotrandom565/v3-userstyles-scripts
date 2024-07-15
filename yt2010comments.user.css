@@ -5,15 +5,17 @@
 @description    Brings back the 2010-2012 comments section style
 @author         Iamnotrandom565
 @preprocessor   less
-@var            select          CommentStyle        "Comments Style"               ["Aozora", "Epic Panda", "Cosmic Panda"]
+@var            select          CommentStyle        "Comments Style"                      ["Aozora", "Epic Panda", "Cosmic Panda"]
 @var            checkbox        Resizable           "Enable resizing on commenting boxes (Broken, please report issues in my Github page)" 0
 @var            checkbox        XPRM                "Enable experimental features"                                                         0
 @var            checkbox        LiveChatVis         "Make live chats visible"                                                              0
 @var            checkbox        OldDropdownFix      "Check this if you use the 2010 - 2012 dropdown user style"                            0
+@var            checkbox        InfCharComments     "Make comments have more than 500 characters"                                          1
+@var            select          NotificationIcon    "Replace the notification icon with:" ["Auto", "Mail", "CosmicPanda (Doesn't work)"]
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
-    /* ==Main== */
+    /* Main */
     body {
         font: 12px arial, sans-serif !important;
     }
@@ -58,11 +60,13 @@
         display: none !important;
     }
     #sb-button-notify {
-        background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -302px -69px !important;
-        width: 12px !important;
-        height: 15px !important;
-        & when (@OldDropdownFix = 1) {
-            top: 5px;
+        & when (@NotificationIcon = Mail) or (@NotificationIcon = Auto) and (@CommentStyle = Aozora) {
+            background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -302px -69px !important;
+            width: 12px !important;
+            height: 15px !important;
+            & when (@OldDropdownFix = 1) {
+                top: 5px;
+            }
         }
     }
     .distiller_yt_headline {
@@ -160,6 +164,12 @@
         width: 75%;
         position: absolute;
         right: 55px;
+    }
+    .distiller_yt-thread_user-content.yt-uix-expander-collapsed .text-content, .distiller_yt-thread_user-content.yt-uix-expander-collapsed {
+        & when (@InfCharComments = 1) {
+            max-height: none !important;
+            overflow: visible !important;
+        }
     }
     .livechat_message .distiller_yt-thread_user-content.yt-uix-expander-collapsed {
         right: initial;
