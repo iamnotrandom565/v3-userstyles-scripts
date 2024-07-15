@@ -4,7 +4,7 @@
 @version        179
 @description    Brings back the 2011 styled channel pages
 @author         Iamnotrandom565
-preprocessor    less
+@preprocessor   less
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.youtube.com/channel/"), url-prefix("https://www.youtube.com/user/"), url-prefix("https://www.youtube.com/@") {
@@ -12,12 +12,11 @@ preprocessor    less
         padding-top: 150px;
         width: 960px;
         margin: auto;
+        position: relative;
     }
     #c3-header {
         display: flex;
-        position: relative;
         flex-wrap: nowrap;
-        overflow: hidden !important;
     }
     .c3-header-left.flex-bar {
         position: relative;
@@ -137,6 +136,10 @@ preprocessor    less
         box-shadow: none;
         text-shadow: none;
     }
+    .c3-tab.active {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
     #c3-tabs .active {
         background-image: none;
         background-color: #666;
@@ -154,8 +157,6 @@ preprocessor    less
         font-size: 14px;
         margin: 0 10px;
         border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
     }
     #c3-below {
         position: relative;
@@ -192,12 +193,13 @@ preprocessor    less
                 position: absolute;
                 right: 0;
                 top: 0;
-                height: 515px;
+                height: 480px;
                 width: 300px;
                 overflow-y: auto;
                 overflow-x: hidden;
                 padding: 5px 0 5px 0;
-                margin-top: 12px;
+                margin: 48px 2.5px 0 2.5px;
+                border-top: 1px solid #000;
             }
             .c3-featured-list {
                 width: 95%;
@@ -219,8 +221,58 @@ preprocessor    less
             left: 0;
         }
     }
+    #c3-search {
+        position: absolute;
+        overflow: visible;
+        right: 99.5px;
+        top: 15%;
+        z-index: 1;
+    }
+    #c3-search {
+        .search-field {
+            height: 1.5em !important;
+            width: 120px !important;
+            padding: 2px 4px !important;
+            background: #fff !important;
+            box-shadow: none !important;
+            border: 1px solid #444 !important;
+            border-radius: 0 !important;
+        
+            &::placeholder {
+                font-size: 0;
+            }
+        }
+        .search-btn {
+            box-shadow: none !important;
+            
+            padding: 0 .5em !important;
+            height: 2.0833em !important;
+            border: 1px solid #ccc !important;
+            color: #000 !important;
+            font: 12px normal arial, sans-serif;
+            background: #f6f6f6 !important;
+            background-image: linear-gradient(#ffffff, #efefef) !important;
+            border-radius: 3px !important;
+            white-space: nowrap !important;
+            vertical-align: middle !important;
+            cursor: pointer !important;
+            overflow: visible !important;
+            width: auto !important;
+            
+            margin-left: 10px;
+            
+            content: 'Search' !important;
+            
+            &>span {
+                text-indent: 0 !important;
+                width: auto !important;
+                background: none !important;
+                color: #000 !important;
+                opacity: 1 !important;
+            }
+        }
+    }
     .c3 .blogger-video {
-        z-index: 100;
         font-size: 11px;
         
         height: 68px;
@@ -298,13 +350,21 @@ preprocessor    less
             display: inline-block !important;
         }
     }
+    .channels-content-item.yt-shelf-grid-item {
+        .yt-lockup-thumbnail, .yt-lockup-title, .yt-lockup-meta.yt-ui-ellipsis.yt-ui-ellipsis-2 {
+            display: none;
+        }
+        ::after {
+            content: 'Unsupported';
+        }
+    } 
     .c3-sidebar-section:not(#c3-featured-channels-slot) {
         position: absolute;
         width: 640px;
         top: calc(100% + 1px);
         right: -6px;
         
-        z-index: 1939239293;
+        z-index: 2;
         border: 6px solid #333;
         border-radius: 4px;
         background-color: #fff;
@@ -328,7 +388,7 @@ preprocessor    less
         left: -5px;
         padding: 12px;
         
-        z-index: 1939239293;
+        z-index: 2;
         border: 6px solid #333;
         border-radius: 4px;
         background-color: #fff;
@@ -372,21 +432,21 @@ preprocessor    less
         }
     }
     
-    #c3-search, #c3-header-meta, .yt-subscription-button-subscriber-count-branded-horizontal::before, .yt-subscription-button-subscriber-count-branded-horizontal::after, .c3-featured-playall, #c3-content-header, .c3 .blogger-video .video-item-description, .c3 .blogger-video .video-owner, .c3-featured-content .yt-lockup.yt-lockup-tile, #footer-container, #c3-featured-playlists-slot, #c3-sidebar-subscribe {
+    #c3-header-meta, .yt-subscription-button-subscriber-count-branded-horizontal::before, .yt-subscription-button-subscriber-count-branded-horizontal::after, .c3-featured-playall, #c3-content-header, .c3 .blogger-video .video-item-description, .c3 .blogger-video .video-owner, .c3-featured-content .yt-lockup.yt-lockup-tile, #footer-container, #c3-featured-playlists-slot, #c3-sidebar-subscribe {
         display: none !important;
         width: 0 !important;
         height: 0 !important;
         opacity: 0 !important;
         font-size: 0 !important;
     }
+}
 /*  == INFO ==
      This userstyle brings back the 2010 - 2012 channel page style.
      It requires V3 to function and it works best with StarTube's Aozora 2011 layout.
     
     == COPYRIGHT ==
-     You're allowed to modify & republish my work, as long as you credit @iamnotrandom565 and my github repository.
+     You're allowed to modify & republish my work, as long as you credit @iamnotrandom565 and my GitHub repository.
     
     == TODO ==
-     
+     - Add search []
 */
-}
