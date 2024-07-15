@@ -2,7 +2,7 @@
 
 ## ytaozorachannels.user.css
 
-**Please note that it's in really early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
+**Please note that it's in early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
 
 This user style is supposed to bring back the old Channels 2.0 layout (around 2007[?] - 2012).
 It requires the Vorapis 3 extension to function, and works best with StarTube's Aozora 2011 layout.
@@ -12,11 +12,9 @@ It requires the Vorapis 3 extension to function, and works best with StarTube's 
 _The current version is: Alpha 1715 (15 July 2024)._
 
 - ### Alpha 1713
-
 > First version
 
-- *Alpha 1715
-
+- **Alpha 1715**
 > Added channel search (non functional)
 
 ## yt2010comments.user.css
@@ -28,7 +26,7 @@ It requires the Vorapis 3 extension to function, and it works best with StarTube
 
 ### Version history
 
-_The current version is: Dev 1712 (12 July 2024)._
+_The current version is: Dev 1715 (15 July 2024)._
 
 - ### Alpha 1206
 > First version
@@ -91,6 +89,11 @@ _The current version is: Dev 1712 (12 July 2024)._
 > Changed "Up Next" to "Suggestions"
 > 
 > Cancel and Post buttons don't overlap with other comments
+
+- **Dev 1715**
+> Comments can now be longer than 500 characters (enabled by default)
+>
+> You can now replace the mail icon with something else (only Mail works)
 
 ## ytcosmicchannels.user.css
 
