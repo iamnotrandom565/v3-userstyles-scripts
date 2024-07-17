@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           V3 Aozora Channel Pages
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        179
+@version        1717
 @description    Brings back the 2011 styled channel pages
 @author         Iamnotrandom565
 @preprocessor   less
@@ -237,6 +237,7 @@
             box-shadow: none !important;
             border: 1px solid #444 !important;
             border-radius: 0 !important;
+            color: #000 !important;
         
             &::placeholder {
                 font-size: 0;
@@ -274,6 +275,7 @@
     }
     .c3 .blogger-video {
         font-size: 11px;
+        margin-bottom: 10px;
         
         height: 68px;
         position: relative;
@@ -351,11 +353,57 @@
         }
     }
     .channels-content-item.yt-shelf-grid-item {
-        .yt-lockup-thumbnail, .yt-lockup-title, .yt-lockup-meta.yt-ui-ellipsis.yt-ui-ellipsis-2 {
-            display: none;
+        font-size: 11px;
+        height: 68px;
+        position: relative;
+        padding: 5px;
+        width: 95%;
+        
+        .yt-lockup-thumbnail {
+            width: 96px !important;
+            height: 54px !important;
+            margin-right: 6px;
+            float: left;
+            padding: 4px;
+            background: #fff;
+            overflow: hidden;
+            border: 1px solid #666;
+            border-radius: 3px;
         }
-        ::after {
-            content: 'Unsupported';
+        .yt-lockup-title {
+            position: absolute;
+            top: 0;
+            left: 116px;
+            margin-top: 4px;
+            overflow: hidden;
+            white-space: normal;
+            max-height: 30px;
+            _height: 30px;
+            margin-bottom: 3px;
+            background-color: inherit;
+            
+            padding: 0;
+            
+            >a {
+                color: #666 !important;
+                text-decoration: none !important;
+                font-weight: bold;
+            }
+        }
+        .yt-lockup-meta.yt-ui-ellipsis.yt-ui-ellipsis-2 {
+            position: absolute;
+            top: 40%;
+            left: 116px;
+            
+            &, .yt-lockup-deemphasized-text {
+                color: #000 !important;
+                padding-right: 0;
+            }
+            .view-count-stat::after {
+                padding-left: 4px;
+                padding-right: 4px;
+                content: '-';
+            }
         }
     } 
     .c3-sidebar-section:not(#c3-featured-channels-slot) {
@@ -448,5 +496,7 @@
      You're allowed to modify & republish my work, as long as you credit @iamnotrandom565 and my GitHub repository.
     
     == TODO ==
-     - Add search []
+     - Add search [x]
+     - Add the Subscribed module []
+     - Make an option to enable the Info module []
 */
