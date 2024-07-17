@@ -9,13 +9,18 @@ It requires the Vorapis 3 extension to function, and works best with StarTube's 
 
 ### Version history
 
-_The current version is: Alpha 1715 (15 July 2024)._
+_The current version is: Alpha 1717 (17 July 2024)._
 
 - ### Alpha 1713
 > First version
 
 - **Alpha 1715**
 > Added channel search (non functional)
+
+- **Alpha 1717**
+> Search now works!
+>
+> The videos sidebar is now more accurate
 
 ## yt2010comments.user.css
 
