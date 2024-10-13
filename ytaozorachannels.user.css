@@ -1,18 +1,43 @@
 /* ==UserStyle==
 @name           V3 Aozora Channel Pages
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        1717
+@version        11013
 @description    Brings back the 2011 styled channel pages
 @author         Iamnotrandom565
+@homepageURL    https://github.com/iamnotrandom565/v3-userstyles-scripts
+@supportURL     https://github.com/iamnotrandom565/v3-userstyles-scripts/issues
+@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/ytaozorachannels.user.css
 @preprocessor   less
+@var            checkbox  enableTvbg      "Enable the wallpaper"                                                    1
+@var            color     wpColor         "Change the wallpaper color (requires disabling the checkbox above) to:"  #999
+@var            color     wrColor         "Change the wrapper color to:"                                            #333
+@var            color     wrTxtColor      "Change the wrapper's text to:"                                           #fff
+@var            color     bgColor         "Change the background color to:"                                         #fff
+@var            color     ttColor         "Change the title color to:"                                              #333
+@var            color     lkColor         "Change the link color to:"                                               #666
+@var            color     btColor         "Change the body text color to:"                                          #000
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.youtube.com/channel/"), url-prefix("https://www.youtube.com/user/"), url-prefix("https://www.youtube.com/@") {
+    /* Setting up variables */
+    
+    :root {
+        & when (@enableTvbg = 0) {
+            --tvbg: @wpColor !important;
+        }
+    }
+    
+    /* The main stuff */
+    
     #channels3 {
         padding-top: 150px;
         width: 960px;
         margin: auto;
         position: relative;
+        
+        a:not(.active) {
+            color: @lkColor !important;
+        }
     }
     #c3-header {
         display: flex;
@@ -20,7 +45,7 @@
     }
     .c3-header-left.flex-bar {
         position: relative;
-        background-color: #666;
+        background-color: @wrColor;
         height: 36px;
         padding: 4px;
         border-radius: 2px 0 0 2px;
@@ -35,30 +60,44 @@
             float: left;
             padding: 0.4em 0 32px 0;
             white-space: nowrap;
+            color: @wrTxtColor;
         }
         .yt-uix-button-subscribe-branded {
-            border-color: #ecc101 !important;
+            border: 1px solid #ecc101 !important;
             background: #ffe971 !important;
             background-image: -moz-linear-gradient(top, #fff9c1, #fed81c) !important;
             background-image: -webkit-gradient(linear, left top, left bottom, from(#fff9c1), to(#fed81c)) !important;
             
+            height: 24px;
+            border-radius: 3px;
+            padding: 0;
+            box-shadow: none;
+            text-shadow: none;
+            
+            &:hover, &:focus {
+                border-color: #630 !important;
+                
+                height: 24px !important;
+                box-shadow: 0 0 3px #999 !important;
+                text-shadow: none !important;
+            }
+            &:active {
+                border-color: #630 !important;
+                background-image: -moz-linear-gradient(top, #ffe667, #ffffff) !important;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#ffe667), to(#ffffff)) !important;
+            }
+            
+            .yt-uix-button-icon-wrapper {
+                display: none;
+            }
             .subscribe-label {
                 font-weight: bold !important;
+                color: #000 !important;
             }
         }
-        .yt-uix-button-subscribe-branded:hover {
-            border-color: #630 !important;
-            outline: 0;
-            -moz-box-shadow: 0 0 3px #999;
-            -webkit-box-shadow: 0 0 3px #999;
-            box-shadow: 0 0 3px #999;
-        }
-        .yt-uix-button-subscribe-branded:active {
-            border-color: #630;
-            background-image: -moz-linear-gradient(top, #ffe667, #ffffff);
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#ffe667), to(#ffffff));
-        }
         .yt-subscription-button-subscriber-count-branded-horizontal {
+            display: inline-block !important;
+            
             background-color: transparent;
             background-image: none;
             
@@ -68,7 +107,7 @@
             
             width: 0;
             height: 0;
-            border: 1px solid #666;
+            border: 1px solid @wrColor;
             border-width: 23.25px 0 23px 12px;
             border-top-color: transparent;
             border-bottom-color: transparent;
@@ -83,8 +122,8 @@
         border-radius: 4px 0 0 0;
         
         background-image: none;
-        background-color: #fff;
-        border: 6px solid #333;
+        background-color: @bgColor;
+        border: 6px solid @wrColor;
         border-right: none;
         
         height: 40px;
@@ -95,15 +134,15 @@
         box-shadow: none;
         
         background-image: none;
-        background-color: #fff;
-        border: 6px solid #333;
+        background-color: @bgColor;
+        border: 6px solid @wrColor;
         border-left: none;
         border-radius: 0 4px 0 0;
         width: 100%;
         height: 30px;
     }
     .c3-tab:not(.active) {
-        color: #666;
+        color: @wrColor;
         
         height: 20px;
         padding: 4px 7px;
@@ -142,7 +181,7 @@
     }
     #c3-tabs .active {
         background-image: none;
-        background-color: #666;
+        background-color: @ttColor;
         color: #fff;
         
         text-shadow: none;
@@ -161,32 +200,35 @@
     #c3-below {
         position: relative;
         background-image: none;
-        background-color: #fff;
-        border: 6px solid #333;
+        background-color: @bgColor;
+        border: 6px solid @wrColor;
         border-top: none;
         overflow: visible;
         margin-bottom: 75%;
         
         #c3-content {
-            border-right: 6px solid #333;
+            border-right: 6px solid @wrColor;
             
             .yt-ui-ellipsis.yt-uix-expander-head {
                 line-height: 14px;
             }
             
-            .video-player-view-component a {
+            .video-player-view-component .description.yt-uix-expander-collapsed .yt-uix-expander-head { position: static;}
+            
+            .yt-uix-expander-head {
                 font-size: 0;
             }
-            .video-player-view-component a[change_text="Show less"]::after {
+            .yt-uix-expander-head[change_text="Show less"]::after {
                 font: 12px arial, sans-serif;
-                color: #666;
+                color: @lkColor;
                 content: '(more info)'
             }
-            .video-player-view-component a[change_text="Show more"]::after {
+            .yt-uix-expander-head[change_text="Show more"]::after {
                 font: 12px arial, sans-serif;
-                color: #666;
+                color: @lkColor;
                 content: '(less info)'
             }
+            .video-player-view-component .title a { font-weight: bold;}
         }
         #c3-content-items {
             &:not(:has(.c3-feed-item)) {
@@ -238,9 +280,20 @@
             border: 1px solid #444 !important;
             border-radius: 0 !important;
             color: #000 !important;
+            
+            transition: none;
         
             &::placeholder {
                 font-size: 0;
+            }
+            
+            &:focus {
+                border-color: #000 !important;
+                border-radius: 2px !important;
+                border-width: 2px !important;
+                
+                width: 118px !important;
+                height: 1.4em !important;
             }
         }
         .search-btn {
@@ -270,6 +323,22 @@
                 background: none !important;
                 color: #000 !important;
                 opacity: 1 !important;
+            }
+            
+            &:hover, &:focus {
+                border-color: #999 !important;
+                background: #f3f3f3 !important;
+                background-image: -moz-linear-gradient(top, #ffffff, #ebebeb) !important;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb)) !important;
+                -moz-box-shadow: 0 0 3px #999 !important;
+                -webkit-box-shadow: 0 0 3px #999 !important;
+                box-shadow: 0 0 3px #999 !important;
+            }
+            &:active {
+                border-color: #999 !important;
+                background: #ddd !important;
+                background-image: -moz-linear-gradient(top, #cccccc, #ffffff) !important;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff)) !important;
             }
         }
     }
@@ -303,7 +372,6 @@
             
             padding: 0;
             
-            color: #666 !important;
             text-decoration: none !important;
             
             .title.video-title {
@@ -333,7 +401,7 @@
             padding: 4px;
             background: #fff;
             overflow: hidden;
-            border: 1px solid #666;
+            border: 1px solid @wrColor;
             border-radius: 3px;
         }
         .video-details {
@@ -342,7 +410,7 @@
             left: 116px;
         }
         .video-details, .video-view-count {
-            color: #000 !important;
+            color: @btColor !important;
             padding-right: 0;
         }
         .video-view-count::after {
@@ -367,7 +435,7 @@
             padding: 4px;
             background: #fff;
             overflow: hidden;
-            border: 1px solid #666;
+            border: 1px solid @wrColor;
             border-radius: 3px;
         }
         .yt-lockup-title {
@@ -385,7 +453,7 @@
             padding: 0;
             
             >a {
-                color: #666 !important;
+                color: @wrColor !important;
                 text-decoration: none !important;
                 font-weight: bold;
             }
@@ -413,9 +481,9 @@
         right: -6px;
         
         z-index: 2;
-        border: 6px solid #333;
+        border: 6px solid @wrColor;
         border-radius: 4px;
-        background-color: #fff;
+        background-color: @bgColor;
         
         padding: 12px;
         box-sizing: border-box;
@@ -423,10 +491,13 @@
         .c3-sidebar-header {
             font-size: 150%;
             padding-bottom: 6px;
-            color: #333;
+            color: @ttColor;
         }
         #c3-description {
-            color: #444;
+            color: @btColor;
+        }
+        .c3-sidebar-item h5 {
+            color: @btColor;
         }
     }
     #c3-featured-channels-slot {
@@ -437,16 +508,16 @@
         padding: 12px;
         
         z-index: 2;
-        border: 6px solid #333;
+        border: 6px solid @wrColor;
         border-radius: 4px;
-        background-color: #fff;
+        background-color: @bgColor;
         
         .c3-sidebar-content {
             display: flex;
             flex-wrap: wrap;
         }
         .c3-sidebar-header {
-            color: #333;
+            color: @ttColor;
             font-size: 150%;
             padding-bottom: 12px;
         }
@@ -469,14 +540,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: #666 !important;
+            color: @lkColor !important;
             position: absolute;
             top: -22px;
             left: 0;
             font: 12px arial, sans-serif;
-        }
-        .c3-featured-channel .subscriber-count {
-            color: #444;
         }
     }
     
@@ -497,6 +565,7 @@
     
     == TODO ==
      - Add search [x]
+     - Add the option to modify the colors [x]
      - Add the Subscribed module []
      - Make an option to enable the Info module []
 */
