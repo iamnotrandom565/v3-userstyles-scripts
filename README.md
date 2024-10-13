@@ -4,12 +4,12 @@
 
 **Please note that it's in early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
 
-This user style is supposed to bring back the old Channels 2.0 layout (around 2007[?] - 2012).
-It requires the Vorapis 3 extension to function, and works best with StarTube's Aozora 2011 layout.
+This user style is supposed to bring back the old Channels 2.0 layout (around from 2006 to 2012).
+It requires the Vorapis 3 extension and the StarTube user script to function. It is also required to enable channels3 in StarTube. It's recommended to change the layout to Aozora (2011).
 
 ### Version history
 
-_The current version is: Alpha 1717 (17 July 2024)._
+_The current version is: Alpha 11013 (13 October 2024)._
 
 - ### Alpha 1713
 > First version
@@ -22,9 +22,16 @@ _The current version is: Alpha 1717 (17 July 2024)._
 >
 > The videos sidebar is now more accurate
 
+- **Alpha 11013**
+> Finally a new update after idk how long lol
+>
+> Added options to modify the channel's colors
+>
+> Modified some other things in the code to make it compatible with the new V3 and StarTube updates
+
 ## yt2010comments.user.css
 
-**Please note that it's currently still in Dev, so things might be broken or unfinished.**
+**After StarTube version 2.2 came out, this userstyle is now obsolete**
 
 This user style file is supposed to bring back the style of the old YouTube comments section style (around 2010 to 2012).
 It requires the Vorapis 3 extension to function, and it works best with StarTube's Aozora, Epic Panda or Cosmic Panda layouts with expCommentsFullWidth turned off.
