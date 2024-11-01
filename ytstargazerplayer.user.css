@@ -1,0 +1,378 @@
+/* ==UserStyle==
+@name           YouTube's Stargazer video player
+@namespace      github.com/openstyles/stylus
+@version        1111
+@description    The 2008-2010 YouTube video player. Only works with V3 installed.
+@author         Iamnotrandom565
+@preprocessor   less
+@var            checkbox     yt2009Player              "Enable the yt2009 player style"                                         1
+==/UserStyle== */
+
+@-moz-document domain("www.youtube.com") {
+    .html5-player-chrome {
+        /* Main */
+        overflow: visible;
+        background: url("https://yt2009.aesthetiful.com/player-imgs/main-bg.png");
+        border: 1px #b1b1b1 solid;
+        
+        /* Play / Pause button */
+        .ytp-button-play {
+            & when (@yt2009Player = 1) {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            float: left;
+            border-right: 1px #b1b1b1 solid;
+            width: 28px;
+            height: 23px;
+            cursor: pointer;
+            background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") !important;
+            overflow: hidden;
+            
+            &:hover {
+                background-position: -29px 0px !important;
+            }
+            &:active {
+                background-position: -58px 0px !important;
+            }
+        }
+        .ytp-button-pause {
+            & when (@yt2009Player = 1) {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            border-right: 1px #b1b1b1 solid;
+            width: 28px;
+            height: 23px;
+            cursor: pointer;
+            background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") !important;
+            background-position: 0px -23px !important;
+            overflow: hidden;
+            
+            &:hover {
+                background-position: -29px -23px !important;
+            }
+            &:active {
+                background-position: -58px -23px !important;
+            }
+        }
+        
+        /* Volume */
+        .ytp-volume-hover-area {
+            /* Fixed a visual bug */
+            height: 23px !important;
+            
+            width: 30px;
+            cursor: pointer;
+            user-select: none;
+            
+            & when (@yt2009Player = 1) {
+                position: absolute;
+                right: 62px;
+                top: 0px;
+            }
+            .ytp-volume-control:hover .ytp-volume-panel {
+                    top: -64px;
+                }
+            
+            .ytp-button-volume {
+                border: none;
+                
+                background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") -28px -49px !important;
+                
+                & when not (@yt2009Player = 1) {
+                    border-right: 1px #b1b1b1 solid;
+                }
+                & when (@yt2009Player = 1) {
+                    border-left: 1px #b1b1b1 solid;
+                }
+                border-bottom: 1px #b1b1b1 solid !important;
+                
+                &:not([data-value="off"]):hover {
+                    background-position: -87px -49px !important;
+                }
+                &[data-value="off"] {
+                    background-position: -58px -48px !important;
+                }
+            }
+            .ytp-volume-panel {
+                padding: 0;
+                border: none;
+                
+                position: absolute;
+                top: -0px;
+                
+                transition: top .2s ease-out .2s;
+                
+                width: 29px;
+                height: 63px;
+                background-image: url("https://yt2009.aesthetiful.com/player-imgs/volume-popup.png");
+                user-select: none;
+                z-index: -9;
+                & when (@yt2009Player = 1) {
+                    right: 0;
+                }
+                & when not (@yt2009Player = 1) {
+                    left: 29px;
+                }
+                .ytp-volume-slider {
+                    margin: 0;
+                    position: absolute;
+                    top: 26px;
+                    left: -12px;
+                    transform: rotate(270deg);
+                    overflow: visible;
+                    
+                    .ytp-volume-slider-foreground {
+                        position: absolute;
+                        left: 6px;
+                        top: 6px;
+                        background-image: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png");
+                        background-position: -67px -73px;
+                        transform: rotate(90deg);
+                        width: 18px;
+                        height: 10px;
+                        cursor: pointer;
+                        user-select: none;
+                        &::before, &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        /* Time */
+        .ytp-time-display {
+            & .ytp-time-current, & .ytp-time-separator, & .ytp-time-duration {
+                color: #000;
+                text-shadow: none !important;
+            }
+            background: none;
+            cursor: default;
+
+            display: flex;
+            position: absolute;
+            top: 6px;
+            font-size: 11px;
+            font-family: "Arial", sans-serif;
+            line-height: normal;
+            & when (@yt2009Player = 1) {
+                left: -48px;
+            }
+            & when not (@yt2009Player = 1) {
+                left: 68px;
+            }
+        }
+        
+        /* Full screen */
+        .ytp-button-fullscreen-enter {
+            border: none;
+            border-left: 1px #b1b1b1 solid;
+            
+            position: absolute;
+            right: 34px;
+            top: 1px;
+            width: 32px;
+            height: 23px;
+            cursor: pointer;
+            & when (@yt2009Player = 1) {
+                background-image: url("https://yt2009.aesthetiful.com/player-imgs/fullscreen_frames.png") !important;
+                background-position: -28px 0px;
+                &:hover {
+                    background-position: 0 -220px !important;
+                }
+            }
+            & when not (@yt2009Player = 1) {
+                background: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.9 5.25L10.7 7.39999L12.75 9.39999L11.15 10.95L9.15 8.95L7 11.1L7.3 5.10001L12.9 5.25ZM7.15 14.1L9.25 16.3L11.25 14.2L12.75 15.85L10.8 17.9L12.9 20.1L7 19.75L7.15 14.1ZM16.95 15.75L18.6 14.2L20.6 16.2L22.75 14.1L22.4 20.1L16.85 19.9L19 17.75L16.95 15.75ZM19 7.2L16.9 5L23 5.35001L22.8 11L20.65 8.8L18.65 10.9L17 9.25L19 7.2Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.8' y1='5.0368' x2='17.8' y2='18.9632' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23757575'/%3E%3Cstop offset='0.4' stop-color='%23868686'/%3E%3Cstop offset='1' stop-color='%232C2C2C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+                &:hover, &:active {
+                    background-image: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.9 5.25L10.7 7.39999L12.75 9.39999L11.15 10.95L9.15 8.95L7 11.1L7.3 5.10001L12.9 5.25ZM7.15 14.1L9.25 16.3L11.25 14.2L12.75 15.85L10.8 17.9L12.9 20.1L7 19.75L7.15 14.1ZM16.95 15.75L18.6 14.2L20.6 16.2L22.75 14.1L22.4 20.1L16.85 19.9L19 17.75L16.95 15.75ZM19 7.2L16.9 5L23 5.35001L22.8 11L20.65 8.8L18.65 10.9L17 9.25L19 7.2Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.7917' y1='4.97536' x2='17.7917' y2='19.0246' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F09F9F'/%3E%3Cstop offset='0.4' stop-color='%23BF1E1E'/%3E%3Cstop offset='1' stop-color='%23DF2929'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+                }
+                padding-right: 2px;
+                margin-top: -2px;
+                z-index: 2;
+            }
+            overflow: hidden !important;
+        }
+        .ytp-button-fullscreen-exit {
+            border: none;
+            border-left: 1px #b1b1b1 solid;
+            
+            position: absolute;
+            right: 34px;
+            top: 1px;
+            width: 32px;
+            height: 23px;
+            cursor: pointer;
+            
+            & when (@yt2009Player = 1) {
+                background: url("https://yt2009.aesthetiful.com/player-imgs/fullscreen-exit-frames.png") -31px 0 !important;
+                &:hover, &:active {
+                    background-position: -31px -23px !important;
+                }
+            }
+            & when not (@yt2009Player = 1) {
+                background: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.1 16.3L7 14.1L12.9 14.45L12.75 20.1L10.65 17.9L8.65 20L7.15 18.35L9.1 16.3ZM9.2 8.8L7.15 6.8L8.75 5.25L10.75 7.25L12.9 5.10001L12.6 11.1L7 10.95L9.2 8.8ZM17.2 14.1L22.75 14.3L20.6 16.45L22.65 18.45L21 20L19 18L16.85 20.1L17.2 14.1ZM22.9 6.75L20.9 8.8L23 11L16.9 10.65L17.1 5L19.25 7.2L21.25 5.10001L22.9 6.75Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.8' y1='5.0368' x2='17.8' y2='18.9632' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23757575'/%3E%3Cstop offset='0.4' stop-color='%23868686'/%3E%3Cstop offset='1' stop-color='%232C2C2C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+                
+                &:hover, &:active {
+                    background-image: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.1 16.3L7 14.1L12.9 14.45L12.75 20.1L10.65 17.9L8.65 20L7.15 18.35L9.1 16.3ZM9.2 8.8L7.15 6.8L8.75 5.25L10.75 7.25L12.9 5.10001L12.6 11.1L7 10.95L9.2 8.8ZM17.2 14.1L22.75 14.3L20.6 16.45L22.65 18.45L21 20L19 18L16.85 20.1L17.2 14.1ZM22.9 6.75L20.9 8.8L23 11L16.9 10.65L17.1 5L19.25 7.2L21.25 5.10001L22.9 6.75Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.7917' y1='4.97536' x2='17.7917' y2='19.0246' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F09F9F'/%3E%3Cstop offset='0.4' stop-color='%23BF1E1E'/%3E%3Cstop offset='1' stop-color='%23DF2929'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+                    }
+                padding: 2px;
+                margin-top: -2px;
+                z-index: 2;
+                }
+            }
+        
+        /* Theater */
+        .ytp-size-toggle-large {
+            border: none;
+            border-left: 1px #b1b1b1 solid;
+            
+            & when (@yt2009Player = 1) {
+                display: none !important;
+            }
+            position: absolute;
+            right: 64px;
+            
+            background: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.85 8.14999V5L22 9.7L17.85 13.7V10.5H12.65V14.95H15.95L11 19L7 14.95H10.2V8.14999H17.85Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.8' y1='5.0368' x2='17.8' y2='18.9632' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23757575'/%3E%3Cstop offset='0.4' stop-color='%23868686'/%3E%3Cstop offset='1' stop-color='%232C2C2C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+            
+            &:hover, &:active {
+                background-image: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.85 8.14999V5L22 9.7L17.85 13.7V10.5H12.65V14.95H15.95L11 19L7 14.95H10.2V8.14999H17.85Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.7917' y1='4.97536' x2='17.7917' y2='19.0246' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F09F9F'/%3E%3Cstop offset='0.4' stop-color='%23BF1E1E'/%3E%3Cstop offset='1' stop-color='%23DF2929'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+            }
+        }
+        .ytp-size-toggle-small {
+            border: none;
+            border-left: 1px #b1b1b1 solid;
+            
+            & when (@yt2009Player = 1) {
+                display: none !important;
+            }
+            position: absolute;
+            right: 64px;
+            
+            background: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 5L22.05 9.05H18.8V15.85H11.15V19L7.05005 14.3L11.15 10.3V13.5H16.35V9.05H13.05L18 5Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.8' y1='5.0368' x2='17.8' y2='18.9632' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23757575'/%3E%3Cstop offset='0.4' stop-color='%23868686'/%3E%3Cstop offset='1' stop-color='%232C2C2C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+            
+            &:hover, &:active {
+                background-image: url("data:image/svg+xml,%3Csvg width='29' height='24' viewBox='0 0 29 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 5L22.05 9.05H18.8V15.85H11.15V19L7.05005 14.3L11.15 10.3V13.5H16.35V9.05H13.05L18 5Z' fill='url(%23a)'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='17.7917' y1='4.97536' x2='17.7917' y2='19.0246' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F09F9F'/%3E%3Cstop offset='0.4' stop-color='%23BF1E1E'/%3E%3Cstop offset='1' stop-color='%23DF2929'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") !important;
+            }
+        }
+        
+        /* Settings button */
+        #settings_button {
+            background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png");
+            background-position: -87px 0px;
+            background-repeat: no-repeat;
+            width: 32px !important;
+            position: absolute;
+            right: 1px !important;
+            top: 0px;
+            border-right: 1px #b1b1b1 solid;
+            border-left: 1px #b1b1b1 solid;
+            cursor: pointer;
+            padding: 0;
+            
+            &:hover, &.ytp-button-pressed {
+                background-position: -87px -24px !important;
+            }
+            
+            &::before, & .arrow, & .arrow-help {
+                display: none;
+            }
+        }
+        
+        /* Progressbar */
+        .prog {
+            overflow: visible;
+            
+            & when (@yt2009Player = 1) {
+                left: 42px;
+                width: calc(640px - 200px) !important;
+            }
+            & when not (@yt2009Player = 1) {
+                left: 118px;
+                width: calc(640px - 220px) !important;
+            }
+            & .ytp-progress-list {
+                border: none;
+            }
+            & .ytp-play-progress {
+                height: 8px;
+                background: url("https://yt2009.aesthetiful.com/player-imgs/seek-bar-elapsed-bg.png");
+            }
+            & .ytp-load-progress {
+                height: 8px;
+                background-image: url("https://yt2009.aesthetiful.com/player-imgs/loaded-bg.png");
+            }
+            & .ytp-unloaded-progress {
+                position: absolute;
+                width: 100%;
+                height: 9px;
+                background-image: url("https://yt2009.aesthetiful.com/player-imgs/seek-bar-main-bg.png");
+            }
+            & .html5-scrubber-button {
+                &:focus &::before {
+                    background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") -67px -49px !important;
+                }
+            }
+            & .html5-scrubber-button::before {
+                cursor: pointer;
+                background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") 0 -49px !important;
+                width: 16px;
+                height: 16px;
+                
+                &:focus {
+                    background: url("https://yt2009.aesthetiful.com/player-imgs/player-buttons.png") -67px -49px !important;
+                }
+            }
+        }
+    }
+    .html5-video-player {
+        /* HitchHiker player warning, inspired from TersisWilvin*/
+        &:not(.flash7)::before {
+            content: "The Stargazer player only supports the Flash7 player.\A Disable the former or enable the latter." !important;
+            text-align: center;
+            color: #fff;
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: bold;
+            white-space: pre;
+            background-color: #ff1111;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            position: absolute;
+            z-index: 1000;
+            cursor: auto;
+            top: 0;
+        }
+        [class*="flash7"] ~ * &::before {
+            display: none;
+        }
+    }
+    /* Other */
+    #subtitles_button, .ytp-button-watch-later, .html5-info-bar, .branding-img-container {
+            display: none !important;
+        }
+}
+
+/* =KNOWN BUGS / ANOMALIES=
+    After a random amount of time, you can't change the volume or scrub the progress bar.
+    Severity: severe
+
+    To change the volume with the volume bar, you have to scrub it sideways.
+    Severity: moderate
+
+  =TODO=
+    Move the theater mode button above the player if the yt2009 player is enabled. [.]
+    Make the non-yt2009 theater and full-screen buttons non-SVG [.]
+    Make the yt2009 full-screen button animated (with GIFS) [.]
+    Make the settings menu accurate [.]
+    Remove the video preview when scrubbing the progress bar [.]
+    
+    =LEGEND=
+        [.] - Thinking
+        [+] - Implementing
+        [@] - Polishing
+        [#] - Done
+*/
