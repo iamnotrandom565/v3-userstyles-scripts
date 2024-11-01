@@ -1,5 +1,14 @@
 # README thing
 
+## ytstargazerplayer.user.css
+
+*Please note that it's in Alpha, so stuff might be broken or absent. Before reporting a bug, please check the bottom of the code.*
+
+This user style is supposed to bring back YouTube's Stargazer video player (used from 2008 to 2010).
+Before you use this user style, you first need to install Vorapis 3 (just go to vorapis.pages.dev, and follow the instructions). Then, enable the Flash7 player, which is located in the "Video player" menu. It fits well with the 2008-2009 layouts from StarTube Beta.
+
+_The current version is: Alpha 1111.1 (November 1st 2024)._
+
 ## ytaozorachannels.user.css
 
 **Please note that it's in early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
