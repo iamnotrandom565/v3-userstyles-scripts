@@ -1,0 +1,824 @@
+/* ==UserStyle==
+@name           YouTube CHannels2A
+@namespace      github.com/iamnotrandom565/v3-userstyles-scripts
+@version        1116
+@description    Channels2A (used from 2006-2009) (only work with V3 + StarTube)
+@author         iamnotrandom565
+@license        no-license
+@homepageURL    https://github.com/iamnotrandom565/v3-userstyles-scripts
+@supportURL     https://github.com/iamnotrandom565/v3-userstyles-scripts/issues
+@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/raw/refs/heads/main/yt2006channels.user.css
+@preprocessor   less
+@var            select          subStyle                    "Select the subcribe button style:"                         ["2006", "2007", "StarTubeDefault"]
+@var            checkbox        showSearx                   "Show channel search box"                                   0
+==/UserStyle== */
+
+@-moz-document domain("www.youtube.com") {
+    #channels3 {
+        /* Main */
+        width: 875px;
+        position: relative;
+        overflow: visible;
+        padding-top: 48px;
+        
+        /* Profile Nav */
+        #c3-header-lower {
+            background: none;
+            box-shadow: none;
+            overflow: visible;
+            
+            height: 34px;
+            width: 250px;
+            position: absolute;
+            top: 16px;
+            left: calc((875px - 250px) / 2);
+        }
+        #c3-tabs {
+            height: 34px;
+            overflow: visible;
+            
+            .c3-tab {
+                background: none !important;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                text-decoration: underline !important;
+                color: #666;
+                
+                &:nth-child(1)::after, &:nth-child(2)::after {
+                    content: '|';
+                    padding: 0 12px;
+                }
+                &:focus {
+                    color: #666;
+                    text-shadow: none !important;
+                }
+            }
+        }
+        
+        /* Channel search */
+        #c3-search {
+            position: absolute;
+            z-index: 5;
+            
+            bottom: -90px;
+            right: -300px;
+            
+            & .search-field {
+                height: 8px;
+                width: 158px;
+                padding: 5px 3px;
+                
+                box-shadow: none;
+                background: #fff;
+                color: #000;
+                border: 1px solid #999;
+                
+                border-radius: 2px;
+                 
+                &:hover {
+                    border-color: #888;
+                }
+                &:focus {
+                    outline: 3px solid rgba(0, 0, 255, 0.3) !important;
+                    box-shadow: 0 0 0 2px #26f inset !important; 
+                }
+                &::placeholder {
+                    font-size: 0;
+                }
+            }
+            & .search-btn {
+                height: 20px;
+                padding: 5px 3px;
+                width: 40px;
+                
+                margin-left: 8px;
+                
+                background: #eee;
+                border: 1px solid #999;
+                box-shadow: none;
+                
+                border-radius: 4px;
+                
+                & > span {
+                    width: 40px;
+                    height: 20px;
+                    background: none;
+                    
+                    font-size: 0;
+                    margin: auto;
+                    display: flex;
+                    
+                    overflow: visible;
+                    
+                    &::after {
+                        color: #000 !important;
+                        font-size: 10px;
+                        text-indent: 0;
+                        content: 'Search';
+                        margin-top: -2px;
+                    }
+                }
+                &:hover {
+                    background: #ddd;
+                    border-color: #888;
+                }
+                &:active {
+                    background: #bbb;
+                    border-color: #666;
+                }
+            }
+        }
+        
+        /* Profile Box */
+        #c3-header-upper {
+            padding: 0;
+            display: block !important;
+            width: 300px;
+            float: left;
+            margin-right: 10px;
+            padding-bottom: 64px;
+            
+            background: #fff;
+            color: #666;
+            border-radius: 0;
+            border: 1px solid #999999;
+            
+            &::before {
+                display: block;
+                background-color: #999999;
+                /* & when (@skewMorph = 1) {
+                    background-image: linear-gradient(#bbb, #999 30%, #676767);
+                } */
+                padding: 3px 5px !important;
+                
+                color: #fff;
+                font-size: 14px;
+                font-weight: bold;
+                content: ' Channel';
+            }
+            & > * {
+                position: relative;
+                display: block !important;
+                padding: 6px;
+            }
+            
+            /* PFP */
+            #c3-channel-pfp {
+                margin: 0;
+                float: left;
+                
+                display: flex;
+                justify-content: center;
+                background-color: #000;
+                border: 1px solid #999999;
+                width: 100px;
+                height: 75px;
+            }
+            #c3-channel-pfp img {
+                height: 75px;
+                width: 75px;
+            }
+            
+            /* Channel Name */
+            #c3-channel-name {
+                color: #666;
+                font-size: 14px;
+                font-weight: bold;
+                
+                margin: initial !important;
+                float: left;
+                padding-left: 6px;
+                position: relative;
+                top: 28px;
+            }
+            
+            /* Subscribe button */
+            #c3-subscribe {
+                .yt-subscription-button-subscriber-count-branded-horizontal {
+                    display: none;
+                }
+                position: relative;
+                float: left;
+                margin-left: 5px;
+                
+                .yt-uix-subscription-preferences-button {
+                    display: none;
+                }
+                
+                & when (@subStyle = 2006) {
+                    &.c3-subscribe button {
+                        border: none !important;
+                        width: 99px !important;
+                        height: 21px !important;
+                        background: no-repeat url("https://web.archive.org/web/20070315093520im_/http://www.youtube.com/img/btn_subscribe_md_yellow_99x21.gif") !important;
+                        & > * {
+                            display: none;
+                        }
+                    }
+                    top: -28px;
+                }
+                & when (@subStyle = 2007) {
+                    .yt-uix-button-subscribe-branded {
+                        width: 87.5px !important;
+                        height: 20px !important;
+                        
+                        margin: 0 !important;
+                        padding: .2em .5em .1em !important;
+                        border: solid #D70 !important;
+                        border-width: 1px !important;
+                        background: #F90 url(https://web.archive.org/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_orange_1x23.png) repeat-x 0 0 !important;
+                        border-radius: 2px !important;
+                        
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        
+                        & .yt-uix-button-content > * {
+                            font-weight: bold !important;
+                            font-size: 1.1em !important;
+                            color: #FFF !important;
+                            text-decoration: none !important;
+                            text-align: center !important;
+                        }
+                        &:hover {
+                            border-color: #930 !important;
+                        }
+                        &:hover .yt-uix-button-content > * {
+                            color: #000 !important;
+                        }
+                    }
+                    .yt-uix-button-subscribed-branded {
+                        width: 87.5px !important;
+                        height: 20px !important;
+                        
+                        margin: 0 !important;
+                        padding: .2em .5em .1em !important;
+	                    border: solid #CCC !important;
+  	                    border-width: 1px !important;
+  	                    font-weight: normal !important;
+	                    background: #EEE url(/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_grey_1x23.png) repeat-x 0 0 !important;
+                        border-radius: 2px !important;
+                        
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        
+                        & .yt-uix-button-content > * {
+                            font-weight: bold !important;
+                            font-size: 1em !important;
+                            color: #222 !important;
+                            text-decoration: none !important;
+                            text-align: center !important;
+                        }
+                        &:hover {
+                            border-color: #666 !important;
+                        }
+                        &:hover .yt-uix-button-content > * {
+                            color: #000 !important;
+                        }
+                    }
+                    top: -27px;
+                }
+                & when (@subStyle = StarTubeDefault) {
+                    top: -27px;
+                }
+            }
+            
+            /* Info */
+            .c3-meta-item {
+                display: flex;
+                flex-direction: row-reverse;
+                padding: 8px 0 0 0;
+                
+                position: absolute;
+                
+                color: #666;
+            }
+            #c3-sub-count {
+                bottom: -50px;
+            }
+            #c3-view-count {
+                width: auto;
+                bottom: -64px;
+            }
+            * .c3-meta-name {
+                font-size: 11px;
+                &::after {
+                    content: ':';
+                }
+            }
+            * .c3-meta-value {
+                font-size: 11px;
+                font-weight: bold;
+                margin: auto 0;
+                padding-left: 4px;
+            }
+            
+            
+        }
+        /* Videos (1) + Featured (1) + Info */
+        #c3-below {
+            position: relative;
+            overflow: visible;
+            display: inline-block;
+            width: 550px;
+            
+            & #c3-content {
+                width: 550px;
+                border: 1px solid #999999;
+                
+                .video-content {
+                    width: 425px;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .c4-player-container.c4-flexible-player-container {
+                    width: 425px;
+                    height: 350px;
+                    
+                    & > * {
+                        border-radius: 4px;
+                    }
+                }
+            }
+            & #c3-sidebar {
+                width: 300px;
+                
+                position: absolute;
+                left: -337px;
+                top: 124px;
+                overflow: visible;
+                
+                & .c3-sidebar-content {
+                    width: 288px;
+                    background-color: #fff;
+                    border: 1px solid #999999;
+                    border-top: none;
+                    padding: 0 6px;
+                }
+                
+                & .c3-sidebar-header, & .c3-channel-link-icon {
+                    display: none;
+                }
+                & #c3-description {
+                    color: #666;
+                    font-size: 11px;
+                }
+                
+                .c3-border.yt-horizontal-rule {
+                    display: none;
+                }
+                
+                & #c3-channel-links-slot {
+                    margin-top: 0;
+                    
+                    .c3-channel-link-text {
+                        color: #339;
+                        font-size: 11px;
+                    }
+                    & .c3-channel-link:focus {
+                        background-color: inherit;
+                        outline: inherit;
+                    }
+                }
+                & #c3-joined-date {
+                    position: absolute;
+                    top: -48px;
+                    right: 26px;
+                    
+                    & h5 {
+                        color: #666;
+                        font-size: 11px;
+                        font-kerning: none;
+                        
+                        &::after {
+                            content: ':';
+                        }
+                    }
+                    & span {
+                        color: #666;
+                        font-weight: bold;
+                        font-size: 11px;
+                        padding-left: 4px;
+                        font-kerning: none;
+                    }
+                }
+                & #c3-location {
+                    & h5 {
+                        color: #666;
+                        font-size: 11px;
+                        margin-right: 4px; 
+                        
+                        &::after {
+                            content: ':';
+                        }
+                    }
+                    & span {
+                        color: #666;
+                        font-size: 11px;
+                        font-weight: bold;
+                    }
+                }
+                & #c3-video-count {
+                    display: none;
+                }
+            }
+        }
+        /* Featured (2) */
+        #c3-below {
+            background: none;
+            
+            #c3-featured-slot {
+                overflow: visible;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                
+                #movie_player {
+                    border-radius: 4px;
+                }
+                .video-detail {
+                    margin: 0;
+                    margin-top: 10px;
+                    margin-left: 3px;
+                    margin-bottom: 10px;
+                    text-align: left;
+                    width: 424px;
+                    
+                    border-radius: 0;
+                    box-shadow: none;
+                    padding: 10px;
+                    
+                    background-color: #3a3a3a !important;
+                    border: 1px solid #999999 !important;
+                    font-size: 12px;
+                    color: #ffffff !important;
+                    
+                    .title a {
+                        padding-top: 0;
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: #666;
+                        text-decoration: underline;
+                    }
+                    .view-count > * {
+                        color: #666 !important;
+                    }
+                    .description.yt-uix-expander-collapsed, .content-item-time-created {
+                        display: none;
+                    }
+                }
+            }
+            
+            /* Videos (2) */
+            #c3-content-header {
+                padding: 3px 5px;
+                border: 1px solid #999999;
+                background-color: #999999;
+                height: 17.5px;
+                
+                & > * {
+                    padding: 0;
+                }
+                .c3-content-header-inner {
+                    height: 17.5px;
+                }
+                
+                .c3-featured-title {
+                    margin: auto 0;
+                    line-height: 0;
+                }
+                .c3-featured-title > * {
+                    font-size: 0;
+                    &::after {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #FFFFFF;
+                        content: 'Videos';
+                    }
+                }
+                .c3-featured-stats {
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin: auto 0;
+                    color: #fff;
+                    & > *::before {
+                        content: '(';
+                    }
+                    & > *::after {
+                        content: ')';
+                    }
+                }
+                & > div > div {
+                    padding-top: 0;
+                }
+                .horizontal-rule {
+                    display: none;
+                }
+                .c3-featured-playall.c3-playall > * {
+                    background: none;
+                    border: none;
+                    box-shadow: none;
+                    text-shadow: none;
+                    padding: 0;
+                    border-radius: 0;
+                    
+                    color: #fff;
+                    font-size: 12px !important;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    
+                    & .c3-arrow {
+                        display: none;
+                    }
+                }
+            }
+            
+            /* Videos (Main) */
+            #c3-content-items {
+                background-color: #333;
+                
+                & when (@showSearx = 1) {
+                    padding-top: 40px;
+                }
+                
+                & .c3-featured-list-items {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-content: space-around;
+                }
+                
+                & .c3-featured-list-item {
+                    width: 170px;
+                }
+                & .blogger-video {
+                    width: 132px;
+                    height: auto !important;
+                    margin: auto;
+                    margin-bottom: 6px;
+                    line-height: 12px;
+                    white-space: normal;
+                    
+                    & > * {
+                        background: none;
+                        border: none;
+                        border-radius: 0;
+                        box-shadow: none;
+                        
+                        height: 100%;
+                    }
+                    .tile-link-block {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                    }
+                    
+                    & .ux-thumb {
+                        border-radius: 0;
+                        border: 1px solid #999999;
+                        background-color: #000;
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        &, & img {
+                            width: 130px !important;
+                        }
+                        & img {
+                            height: auto;
+                        }
+                    }
+                    
+                    & .video-item-content {
+                        width: 130px;
+                        padding: 0;
+                        
+                        & .video-overview {
+                            color: #fff;
+                            font-size: 12px;
+                            text-decoration: underline;
+                            white-space: normal;
+                        }
+                    }
+                    
+                    & .video-details {
+                        margin-top: 2px;
+                        margin-bottom: 3px;
+                        font-size: 11px !important;
+                        line-height: 13px !important;
+                        color: #ffffff;
+                    }
+                    
+                    & .video-item-description, & .video-owner {
+                        display: none;
+                    }
+                    & .video-date {
+                        display: block;
+                        color: #fff;
+                    }
+                    & .video-view-count {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        
+        /* Search */
+        #c3-search {
+            & when not (@showSearx = 1) {
+                display: none;
+            }
+        }
+    }
+    
+    /* Feed */
+    #channels3.is-feed {
+        & #c3-content-header {
+            display: none;
+        }
+        & #c3-search {
+            display: none;
+        }
+        & #c3-nav {
+            padding: 3px 5px;
+            border: 1px solid #999999;
+            background-color: #999999;
+            height: 17.5px;
+                
+            & > * {
+                padding: 0;
+                margin: auto 0;
+                color: #fff;
+                text-decoration: underline;
+                
+                &:not(:nth-child(4))::after {
+                    content: '|';
+                    padding: 0 6px;
+                }
+            }
+        }
+        #c3-content {
+            padding: 0;
+        }
+        & .feed-item-main {
+            margin: 0;
+            
+            &:hover .feed-item-owner > * {
+                color: #fff;
+                text-decoration: none;
+            }
+            
+            & .feed-item-actions-line {
+                color: #fff;
+                font-weight: bold;
+            }
+            & .feed-item-time {
+                color: #999;
+                font-weight: normal;
+                
+                &::before {
+                    content: '(';
+                }
+                &::after {
+                    content: ')';
+                }
+            }
+        }
+        & .feed-author-bubble-container {
+            display: none;
+        }
+        #c3-feed-header-rule, #c3-featured-slot {
+            display: none;
+            margin: 0;
+        }
+    }    
+    
+    /* Videos page */
+    #channels3.is-videos {
+        /* I'll complete the sort videos dropdown later */
+        .video-sort-btn {
+            height: 17.5px;
+            margin-bottom: 3px;
+        }
+        #c3-search {
+            bottom: -70px;
+            right: -320px;
+        }
+        
+        #c3-content {
+            width: 875px !important;
+            padding-top: 0;
+            #c3-nav {
+                display: none;
+            }
+            #c3-content-header {
+                width: 875px;
+                padding: 0;
+            }
+            .c3-content-header-left {
+                width: 100% !important;
+            }
+            .c3-content-header-left > * {
+                color: #fff;
+                font-size: 14px;
+                font-weight: bold;
+                
+                &.c3-grey-text {
+                    float: right;
+                    margin-right: 12px;
+                }
+            }
+            
+            #c3-content-items {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 0;
+                
+                & when (@showSearx = 1) {
+                    padding-top: 40px;
+                }
+                & when (@showSearx = 0) {
+                    padding-top: 16px;
+                }
+                
+                & > * {
+                    width: 120px;
+                    margin: 0 25px 20px 25px;
+                    padding: 0;
+                    
+                    .yt-lockup-thumbnail {
+                        width: 122px;
+                        height: 94px;
+                        padding: 0;
+                        border-radius: 0;
+                        background-color: #000;
+                        outline: 1px solid #999;
+                        
+                        display: flex;
+                        align-items: center;
+                        
+                        & .yt-thumb-clip {
+                            background: #000;
+                        }
+                    }
+                    .yt-lockup-content {
+                        & .yt-lockup-title {
+                            margin-top: 5px;
+                        }
+                        & .yt-lockup-title a {
+                            color: #fff !important;
+                            font-size: 12px !important;
+                            text-decoration: underline;
+                        }
+                        
+                        & .yt-lockup-meta {
+                            margin: 3px 0px;
+                            font-size: 11px;
+                            line-height: 13px;
+                        }
+                        & .yt-lockup-meta > ul {
+                            display: flex !important;
+                            flex-direction: column;
+                            
+                            & > * {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        & #c3-header-upper, & #c3-featured-slot {
+            display: none !important;
+            margin: 0 !important;
+        }
+    }
+    
+    /* Delete the footer */
+    body:has(#c3-container) #footer {
+        display: none;
+    }
+}
+
+/* =KNOWN BUGS=
+
+    - Community posts can't be viewed [It's a StarTube bug]
+
+   =TO DO=
+    - Complete the feed [+]
+    - Complete the videos [+]
+    - Complete the playlist [+]
+    - Make the colors and font customizable (like how I did with Channels2B) [-]
+    - Make the channel list accurate [-]
+    
+    - LEGEND:
+    [-] = Thinking / Deciding
+    [+] = Implementing
+    [/s] = Polishing
+    [#] = Done
+*/
