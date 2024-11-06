@@ -16,7 +16,18 @@ _The current version is: Alpha 1116 (November 6 2024)._
 This user style is supposed to bring back YouTube's Stargazer video player (used from 2008 to 2010).
 Before you use this user style, you first need to install Vorapis 3 (just go to vorapis.pages.dev, and follow the instructions). Then, enable the Flash7 player, which is located in the "Video player" menu. It fits well with the 2008-2009 layouts from StarTube Beta.
 
-_The current version is: Alpha 1111.1 (November 1st 2024)._
+### Version history
+
+_The current version is: Alpha 1116 (November 6 2024)._
+
+- ### Alpha 1111
+> First version
+
+- ### Alpha 1111.1
+> Added proper credit
+
+- ### Alpha 1116
+> Gone base64
 
 ## ytaozorachannels.user.css
 
