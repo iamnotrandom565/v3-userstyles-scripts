@@ -211,7 +211,7 @@
                         border: none !important;
                         width: 99px !important;
                         height: 21px !important;
-                        background: no-repeat url("https://web.archive.org/web/20070315093520im_/http://www.youtube.com/img/btn_subscribe_md_yellow_99x21.gif") !important;
+                        background: no-repeat url(//s.ytimg.com/yt/img/btn_subscribe_md_yellow_99x21.gif) !important;
                         & > * {
                             display: none;
                         }
@@ -227,7 +227,7 @@
                         padding: .2em .5em .1em !important;
                         border: solid #D70 !important;
                         border-width: 1px !important;
-                        background: #F90 url(https://web.archive.org/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_orange_1x23.png) repeat-x 0 0 !important;
+                        background: #F90 url(//s.ytimg.com/yt/img/btn_gradient_orange_1x23.png) repeat-x 0 0 !important;
                         border-radius: 2px !important;
                         
                         display: flex !important;
@@ -258,7 +258,7 @@
 	                    border: solid #CCC !important;
   	                    border-width: 1px !important;
   	                    font-weight: normal !important;
-	                    background: #EEE url(/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_grey_1x23.png) repeat-x 0 0 !important;
+	                    background: #EEE url(//s.ytimg.com/yt/img/btn_gradient_grey_1x23.png) repeat-x 0 0 !important;
                         border-radius: 2px !important;
                         
                         display: flex !important;
