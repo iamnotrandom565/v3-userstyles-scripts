@@ -29,6 +29,13 @@ _The current version is: Alpha 1116 (November 6 2024)._
 - ### Alpha 1116
 > Gone base64
 
+- ### Alpha 11129
+> Made the video settings accurate (you have to enable it through the settings)
+>
+> Also made the timestamps when you scrub the video accurate
+>
+> Fixed some bugs
+
 ## ytaozorachannels.user.css
 
 **Please note that it's in early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
