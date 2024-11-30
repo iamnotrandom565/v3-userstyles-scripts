@@ -9,7 +9,7 @@ Before you use this user style, you first need to install Vorapis 3 (just go to 
 
 ### Version history
 
-_The current version is: Alpha 11130 (November 30 2024)._
+_The current version is: Alpha 11130.1 (November 30 2024)._
 
 - ### Alpha 1116
 > First version
@@ -18,6 +18,9 @@ _The current version is: Alpha 11130 (November 30 2024)._
 > Added similar customizations to ytaozorachannels.user.css
 >
 > Plenty improvements
+
+- ### Alpha 11130.1
+> Gone base64
 
 ## ytstargazerplayer.user.css
 
