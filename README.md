@@ -7,7 +7,17 @@
 This user style is supposed to bring back Channels2A, used from 2006 to 2009.
 Before you use this user style, you first need to install Vorapis 3 (just go to vorapis.pages.dev, and follow the instructions). Then, install an userscript manager (like Tampermonkey), and install StarTube. Finally, go to the StarTube settings, and enable Channels3, or select a layout from Early 2013 to 2008.
 
-_The current version is: Alpha 1116 (November 6 2024)._
+### Version history
+
+_The current version is: Alpha 11130 (November 30 2024)._
+
+- ### Alpha 1116
+> First version
+
+- ### Alpha 11130
+> Added similar customizations to ytaozorachannels.user.css
+>
+> Plenty improvements
 
 ## ytstargazerplayer.user.css
 
