@@ -1,8 +1,8 @@
 /* ==UserStyle==
-@name           YouTube CHannels2A
+@name           YouTube Channels2A
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        1116
-@description    Channels2A (used from 2006-2009) (only work with V3 + StarTube)
+@version        11130
+@description    Channels2A (used from 2006-2009) (only works with V3 + StarTube)
 @author         iamnotrandom565
 @license        no-license
 @homepageURL    https://github.com/iamnotrandom565/v3-userstyles-scripts
@@ -10,16 +10,38 @@
 @updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/raw/refs/heads/main/yt2006channels.user.css
 @preprocessor   less
 @var            select          subStyle                    "Select the subcribe button style:"                         ["2006", "2007", "StarTubeDefault"]
+@var            select          cFont                       "Channel font"                                              ["Arial*", "Courier New", "Georgia", "Times New Roman", "Verdana"]
 @var            checkbox        showSearx                   "Show channel search box"                                   0
+@var            checkbox        CBG                         "Enable channel wallpaper"                                  1
+@var            color           WPColor                     "Wallpaper color (requires disabling the checkbox above)"   #ffffff
+@var            color           chTabColor                  "Tab color"                                                 #666666
+@var            color           chModuleHeadColor           "Module header color"                                       #bbbbbb
+@var            color           chMHTextColor               "Module header text color"                                  #ffffff
+@var            color           chModuleTextColor           "Module text color"                                         #666666
+@var            color           chModuleBGColor             "Module background color"                                   #ffffff
+@var            color           chModuleLinkColor           "Module link color"                                         #dddddd
+@var            color           chMainBGColor               "Main BG Color"                                             #333333
+@var            color           chMainLinkColor             "Main link color"                                           #ffffff
+@var            color           chMainTextColor             "Main text color"                                           #ffffff
 ==/UserStyle== */
 
 @-moz-document domain("www.youtube.com") {
+    :root {
+        & when (@CBG = 0) {
+            --tvbg: @WPColor !important;
+        }
+    }
     #channels3 {
         /* Main */
         width: 875px;
         position: relative;
         overflow: visible;
         padding-top: 48px;
+        font-family: @cFont !important;
+        
+        &:has(.video-player-view-component) #c3-search {
+            top: 522px !important;
+        }
         
         /* Profile Nav */
         #c3-header-lower {
@@ -43,14 +65,14 @@
                 box-shadow: none;
                 padding: 0;
                 text-decoration: underline !important;
-                color: #666;
+                color: @chTabColor;
                 
                 &:nth-child(1)::after, &:nth-child(2)::after {
                     content: '|';
                     padding: 0 12px;
                 }
                 &:focus {
-                    color: #666;
+                    color: @chTabColor;
                     text-shadow: none !important;
                 }
             }
@@ -61,7 +83,7 @@
             position: absolute;
             z-index: 5;
             
-            bottom: -90px;
+            bottom: -75px;
             right: -300px;
             
             & .search-field {
@@ -139,20 +161,20 @@
             margin-right: 10px;
             padding-bottom: 64px;
             
-            background: #fff;
-            color: #666;
+            background: @chModuleBGColor;
+            color: @chModuleTextColor;
             border-radius: 0;
-            border: 1px solid #999999;
+            border: 1px solid @chModuleHeadColor;
             
             &::before {
                 display: block;
-                background-color: #999999;
+                background-color: @chModuleHeadColor;
                 /* & when (@skewMorph = 1) {
                     background-image: linear-gradient(#bbb, #999 30%, #676767);
                 } */
                 padding: 3px 5px !important;
                 
-                color: #fff;
+                color: @chMHTextColor;
                 font-size: 14px;
                 font-weight: bold;
                 content: ' Channel';
@@ -171,7 +193,7 @@
                 display: flex;
                 justify-content: center;
                 background-color: #000;
-                border: 1px solid #999999;
+                border: 1px solid @chModuleHeadColor;
                 width: 100px;
                 height: 75px;
             }
@@ -182,7 +204,7 @@
             
             /* Channel Name */
             #c3-channel-name {
-                color: #666;
+                color: @chModuleTextColor;
                 font-size: 14px;
                 font-weight: bold;
                 
@@ -258,7 +280,7 @@
 	                    border: solid #CCC !important;
   	                    border-width: 1px !important;
   	                    font-weight: normal !important;
-	                    background: #EEE url(/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_grey_1x23.png) repeat-x 0 0 !important;
+	                    background: #EEE url(https://web.archive.org/web/20071001073920im_/http://www.youtube.com/img/btn_gradient_grey_1x23.png) repeat-x 0 0 !important;
                         border-radius: 2px !important;
                         
                         display: flex !important;
@@ -295,7 +317,7 @@
                 
                 position: absolute;
                 
-                color: #666;
+                color: @chModuleTextColor;
             }
             #c3-sub-count {
                 bottom: -50px;
@@ -328,7 +350,6 @@
             
             & #c3-content {
                 width: 550px;
-                border: 1px solid #999999;
                 
                 .video-content {
                     width: 425px;
@@ -354,17 +375,17 @@
                 
                 & .c3-sidebar-content {
                     width: 288px;
-                    background-color: #fff;
-                    border: 1px solid #999999;
+                    background-color: @chModuleBGColor;
+                    border: 1px solid @chModuleHeadColor;
                     border-top: none;
                     padding: 0 6px;
                 }
                 
-                & .c3-sidebar-header, & .c3-channel-link-icon {
+                & .c3-sidebar-header, & .c3-channel-link-icon, & .c3-featured-playlists {
                     display: none;
                 }
                 & #c3-description {
-                    color: #666;
+                    color: @chModuleTextColor;
                     font-size: 11px;
                 }
                 
@@ -376,7 +397,7 @@
                     margin-top: 0;
                     
                     .c3-channel-link-text {
-                        color: #339;
+                        color: @chModuleLinkColor;
                         font-size: 11px;
                     }
                     & .c3-channel-link:focus {
@@ -390,7 +411,7 @@
                     right: 26px;
                     
                     & h5 {
-                        color: #666;
+                        color: @chModuleTextColor;
                         font-size: 11px;
                         font-kerning: none;
                         
@@ -399,7 +420,7 @@
                         }
                     }
                     & span {
-                        color: #666;
+                        color: @chModuleTextColor;
                         font-weight: bold;
                         font-size: 11px;
                         padding-left: 4px;
@@ -408,7 +429,7 @@
                 }
                 & #c3-location {
                     & h5 {
-                        color: #666;
+                        color: @chModuleTextColor;
                         font-size: 11px;
                         margin-right: 4px; 
                         
@@ -417,7 +438,7 @@
                         }
                     }
                     & span {
-                        color: #666;
+                        color: @chModuleTextColor;
                         font-size: 11px;
                         font-weight: bold;
                     }
@@ -425,17 +446,69 @@
                 & #c3-video-count {
                     display: none;
                 }
+                & #c3-featured-channels-slot {
+                    width: 100%;
+                    &::before {
+                        display: block;
+                        background-color: @chModuleHeadColor;
+                        /* & when (@skewMorph = 1) {
+                            background-image: linear-gradient(#bbb, #999 30%, #676767);
+                        } */
+                        padding: 3px 5px !important;
+                
+                        color: @chMHTextColor;
+                        font-size: 14px;
+                        font-weight: bold;
+                        content: " 's friends";
+                    }
+                    
+                    &:has(*) a.tile-link-block {
+                        box-shadow: none;
+                        background-color: transparent;
+                        border: none;
+                        
+                        &:focus {
+                            outline: none;
+                        }
+                        
+                        .channel-info > * {
+                            color: @chModuleTextColor;
+                            
+                            
+                            &.channel-name.title {
+                                font-size: 14px !important;
+                                font-weight: bold;
+                                color: @chModuleLinkColor;
+                                text-decoration: underline !important;
+                            }
+                            &.subscriber-count {
+                                font-size: 11px !important;
+                            }
+                        }
+                        .thumb-container {
+                            border: 1px solid @chModuleHeadColor;
+                        }
+                    }
+                }
             }
         }
         /* Featured (2) */
         #c3-below {
             background: none;
             
+            #c3-nav {
+                display: none;
+            }
+            
             #c3-featured-slot {
                 overflow: visible;
                 text-align: center;
                 display: flex;
                 justify-content: center;
+                
+                &:not(:has(a)) {
+                    margin: 0;
+                }
                 
                 #movie_player {
                     border-radius: 4px;
@@ -452,8 +525,8 @@
                     box-shadow: none;
                     padding: 10px;
                     
-                    background-color: #3a3a3a !important;
-                    border: 1px solid #999999 !important;
+                    background-color: @chMainBGColor !important;
+                    border: 1px solid @chModuleHeadColor !important;
                     font-size: 12px;
                     color: #ffffff !important;
                     
@@ -461,11 +534,11 @@
                         padding-top: 0;
                         font-weight: bold;
                         font-size: 12px;
-                        color: #666;
+                        color: @chModuleLinkColor;
                         text-decoration: underline;
                     }
                     .view-count > * {
-                        color: #666 !important;
+                        color: @chModuleLinkColor !important;
                     }
                     .description.yt-uix-expander-collapsed, .content-item-time-created {
                         display: none;
@@ -476,8 +549,8 @@
             /* Videos (2) */
             #c3-content-header {
                 padding: 3px 5px;
-                border: 1px solid #999999;
-                background-color: #999999;
+                border: 1px solid @chModuleHeadColor;
+                background-color: @chModuleHeadColor;
                 height: 17.5px;
                 
                 & > * {
@@ -496,7 +569,7 @@
                     &::after {
                         font-size: 14px;
                         font-weight: bold;
-                        color: #FFFFFF;
+                        color: @chMHTextColor;
                         content: 'Videos';
                     }
                 }
@@ -504,7 +577,7 @@
                     font-size: 12px;
                     font-weight: bold;
                     margin: auto 0;
-                    color: #fff;
+                    color: @chMHTextColor;
                     & > *::before {
                         content: '(';
                     }
@@ -526,7 +599,7 @@
                     padding: 0;
                     border-radius: 0;
                     
-                    color: #fff;
+                    color: @chMHTextColor;
                     font-size: 12px !important;
                     font-weight: bold;
                     text-decoration: underline;
@@ -539,7 +612,8 @@
             
             /* Videos (Main) */
             #c3-content-items {
-                background-color: #333;
+                background-color: @chMainBGColor;
+                border: 1px solid @chModuleHeadColor;
                 
                 & when (@showSearx = 1) {
                     padding-top: 40px;
@@ -579,7 +653,7 @@
                     
                     & .ux-thumb {
                         border-radius: 0;
-                        border: 1px solid #999999;
+                        border: 1px solid @chModuleHeadColor;
                         background-color: #000;
                         height: 100px;
                         display: flex;
@@ -597,7 +671,7 @@
                         padding: 0;
                         
                         & .video-overview {
-                            color: #fff;
+                            color: @chMainLinkColor;
                             font-size: 12px;
                             text-decoration: underline;
                             white-space: normal;
@@ -609,7 +683,7 @@
                         margin-bottom: 3px;
                         font-size: 11px !important;
                         line-height: 13px !important;
-                        color: #ffffff;
+                        color: @chMainTextColor;
                     }
                     
                     & .video-item-description, & .video-owner {
@@ -617,16 +691,16 @@
                     }
                     & .video-date {
                         display: block;
-                        color: #fff;
+                        color: @chMainTextColor;
                     }
                     & .video-view-count {
-                        color: #fff;
+                        color: @chMainTextColor;
                     }
                 }
             }
         }
         
-        /* Search */
+        /* Search 2 */
         #c3-search {
             & when not (@showSearx = 1) {
                 display: none;
@@ -651,7 +725,7 @@
             & > * {
                 padding: 0;
                 margin: auto 0;
-                color: #fff;
+                color: @chModuleLinkColor;
                 text-decoration: underline;
                 
                 &:not(:nth-child(4))::after {
@@ -662,21 +736,70 @@
         }
         #c3-content {
             padding: 0;
+            
+            #c3-content-items {
+                padding: 0;
+                height: 100%;
+            }
+        }
+        & .feed-list-item.feed-item-container {
+            margin: 0 8px; 
+            
+            & .yt-lockup-video {
+                margin: 0;
+            }
+            & .yt-lockup-title > * {
+                color: @chMainLinkColor !important;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: underline;
+            }
         }
         & .feed-item-main {
             margin: 0;
             
+            & .feed-item-header {
+                margin: 0;
+            }
+            
+            & .feed-item-content-wrapper.channel-lockup {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                
+                & .feed-item-content {
+                    padding: 0;
+                }
+                & .feed-subscribe-channel-link > * {
+                    color: @chMainLinkColor;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+                
+                & .channel-rec-subscribe-button-container  {
+                    display: none;
+                }
+            }
+            
             &:hover .feed-item-owner > * {
-                color: #fff;
+                color: @chMainTextColor;
                 text-decoration: none;
             }
             
             & .feed-item-actions-line {
-                color: #fff;
+                color: @chMainTextColor;
                 font-weight: bold;
             }
+            
+            & .run.run-link.filled {
+                color: @chMainTextColor;
+                text-decoration: none;
+                background: none;
+                outline: none;
+            }
             & .feed-item-time {
-                color: #999;
+                color: @chModuleTextColor;
                 font-weight: normal;
                 
                 &::before {
@@ -685,6 +808,10 @@
                 &::after {
                     content: ')';
                 }
+            }
+
+            & .yt-lockup-thumbnail, & .yt-lockup-meta, & .yt-lockup-description, & .feed-item-thumb {
+                display: none;
             }
         }
         & .feed-author-bubble-container {
@@ -696,23 +823,100 @@
         }
     }    
     
-    /* Videos page */
-    #channels3.is-videos {
+    /* Videos page + Search page */
+    #c3-filter-menu {
+        display: flex !important;
+        position: absolute !important;
+        left: 35% !important;
+        width: auto !important;
+        padding: 0;
+        
+        background: none;
+        border: none;
+        
+        & > * {
+            display: block !important;
+            
+            & > * {
+                color: @chMainLinkColor;
+                font-size: 11px;
+                text-decoration: underline;
+                font-weight: normal;
+                padding: 0;
+                
+                &::after {
+                    padding: 12px;
+                    color: @chMainTextColor;
+                    content: '|';
+                }
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+    }
+    #channels3.is-videos, #channels3.is-search {
         /* I'll complete the sort videos dropdown later */
         .video-sort-btn {
             height: 17.5px;
+            position: relative;
+            background: none;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            z-index: -10000;
             margin-bottom: 3px;
+            
+            & > *:not(ul) {
+                display: none;
+            }
         }
         #c3-search {
             bottom: -70px;
             right: -320px;
+        }
+        #c3-filter-menu {
+            left: -650px !important;
+            top: 18px !important
         }
         
         #c3-content {
             width: 875px !important;
             padding-top: 0;
             #c3-nav {
-                display: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow: visible;
+                
+                display: flex;
+                z-index: 999;
+                
+                position: absolute;
+                top: 0;
+                left: 108px;
+                
+                & > * {
+                    height: 100%;
+                    margin: 0;
+                    overflow: visible;
+                    color: @chModuleLinkColor;
+                    display: inline-block;
+                    text-decoration: underline;
+                    background: none;
+                    outline: none;
+                    
+                    &::before {
+                        content: '|';
+                        padding: 0 6px;
+                    }
+                }
+                &:has(#c3-playlists-nav.active) {
+                    left: 48px;
+                }
+                & > *.active {
+                    display: none;
+                }
             }
             #c3-content-header {
                 width: 875px;
@@ -742,7 +946,7 @@
                     padding-top: 40px;
                 }
                 & when (@showSearx = 0) {
-                    padding-top: 16px;
+                    padding-top: 24px;
                 }
                 
                 & > * {
@@ -756,7 +960,7 @@
                         padding: 0;
                         border-radius: 0;
                         background-color: #000;
-                        outline: 1px solid #999;
+                        outline: 1px solid @chModuleHeadColor;
                         
                         display: flex;
                         align-items: center;
@@ -770,7 +974,7 @@
                             margin-top: 5px;
                         }
                         & .yt-lockup-title a {
-                            color: #fff !important;
+                            color: @chMainLinkColor !important;
                             font-size: 12px !important;
                             text-decoration: underline;
                         }
@@ -785,15 +989,18 @@
                             flex-direction: column;
                             
                             & > * {
-                                color: #fff;
+                                color: @chMainTextColor;
                             }
                         }
                     }
                 }
+                & .continuation_item_wrapper {
+                    width: 820px;
+                }
             }
         }
         
-        & #c3-header-upper, & #c3-featured-slot {
+        & #c3-header-upper, & #c3-featured-slot, & #c3-sidebar {
             display: none !important;
             margin: 0 !important;
         }
@@ -805,20 +1012,23 @@
     }
 }
 
-/* =KNOWN BUGS=
+/*  =INFO=
+    Channels2A: https://web.archive.org/web/20070315093520/http://www.youtube.com/smosh
 
+    =KNOWN BUGS / ANOMALIES=
     - Community posts can't be viewed [It's a StarTube bug]
+    - Playlists can't be viewed either [Also a StarTube bug]
 
    =TO DO=
-    - Complete the feed [+]
-    - Complete the videos [+]
+    - Complete the feed [#]
+    - Complete the videos [#]
     - Complete the playlist [+]
     - Make the colors and font customizable (like how I did with Channels2B) [-]
-    - Make the channel list accurate [-]
+    - Make the channel list accurate [#]
     
     - LEGEND:
     [-] = Thinking / Deciding
     [+] = Implementing
-    [/s] = Polishing
+    [/] = Polishing
     [#] = Done
 */
