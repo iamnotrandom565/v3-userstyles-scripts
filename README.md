@@ -8,10 +8,12 @@
 - Q: This userstyle doesn't work!1!
 - A: Do you have Vorapis 3? Then install it from [here](https://vorapis.pages.dev) and follow the instructions. Some of my userstyles also require StarTube. But to install that, you need to install [TamperMonkey](https://www.tampermonkey.net), or any other userscript manager that you like. Then, search "StarTube" on [Greasyfork](https://www.greasyfork.org/en), click on the first or second result, and click "install". Then it should bring you to the userscript installation page, click install, and you're done.
 
-## yt2007player
+## yt2007player.user.css
 
 This userstyle is supposed to bring back the YouTube player from late 2006 to early 2008.
+
 It doesn't require StarTube to function, but I recommend doing so, for simplicity and looks.
+
 If you find a bug, which are probably many, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version History
@@ -20,8 +22,10 @@ If you find a bug, which are probably many, first check at the bottom of the cod
 
 ## ytchannels1.user.css (previously channels2a.user.css)
 
-This user style is supposed to bring back Channels1, used from 2006 to 2009.
-This userscript requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+This user style is supposed to bring back Channels1, used from mid 2006 to late 2009.
+
+This userstyle requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+
 If you find a bug, which are probably many, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
@@ -45,7 +49,9 @@ _The current version is: Alpha 11215 (December 15 2024)._
 ## ytstargazerplayer.user.css
 
 This user style is supposed to bring back YouTube's Stargazer video player (used from early 2008 to mid 2010).
+
 This userstyle doesn't require StarTube, but for simplicity and looks, I recommend doing so.
+
 If you find a bug, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
@@ -73,7 +79,9 @@ _The current version is: Alpha 1116 (November 6 2024)._
 **Note that I'm currently rewriting this userstyle from the ground up to fix bugs and compatibility issues, sorry for the lack of updates.**
 
 This user style is supposed to bring back the YouTube Channels 2.0 layout (from late 2009 to early 2012).
-This userscript requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+
+This userstyle requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+
 If you find a bug, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
