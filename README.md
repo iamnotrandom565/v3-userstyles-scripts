@@ -16,6 +16,8 @@ It doesn't require StarTube to function, but I recommend doing so, for simplicit
 
 If you find a bug, which are probably many, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
+Also, HUGE thanks to EricKrouss for making the [HTML5 2007 YouTube video player](https://github.com/EricKrouss/2007-YouTube-Player-HTML5/tree/main)!
+
 ### Version History
 
 *The current version is: Alpha 11215 (December 15 2024)*
