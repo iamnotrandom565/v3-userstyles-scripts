@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name           V3 Aozora Channel Pages
+@name           YouTube channels2
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        11013
+@version        11215
 @description    Brings back the 2011 styled channel pages
 @author         Iamnotrandom565
 @homepageURL    https://github.com/iamnotrandom565/v3-userstyles-scripts
 @supportURL     https://github.com/iamnotrandom565/v3-userstyles-scripts/issues
-@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/ytaozorachannels.user.css
+@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/ytchannels2.user.css
 @preprocessor   less
 @var            checkbox  enableTvbg      "Enable the wallpaper"                                                    1
 @var            color     wpColor         "Change the wallpaper color (requires disabling the checkbox above) to:"  #999
