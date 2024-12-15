@@ -1,33 +1,52 @@
 # README thing
 
-## channels2a.user.css
+## FAQ
 
-*Please note that it's in Alpha, so stuff might be broken or absent. Before reporting a bug, please check the bottom of the code.*
+- Q: How do I install userstyles?
+- A: First, go to your preferred browser extensions store (Chrome Web Store for Chromium, Mozilla Add-ons for Firefox), search up "Stylus", click on the first result, and click install. Then, go to a preferred userstyle here, click on the "view raw file" button, and it should bring you to Stylus' userstyle installation page, click install.
 
-This user style is supposed to bring back Channels2A, used from 2006 to 2009.
-Before you use this user style, you first need to install Vorapis 3 (just go to vorapis.pages.dev, and follow the instructions). Then, install an userscript manager (like Tampermonkey), and install StarTube. Finally, go to the StarTube settings, and enable Channels3, or select a layout from Early 2013 to 2008.
+- Q: This userstyle doesn't work!1!
+- A: Do you have Vorapis 3? Then install it from [here](https://vorapis.pages.dev) and follow the instructions. Some of my userstyles also require StarTube. But to install that, you need to install [TamperMonkey](https://www.tampermonkey.net), or any other userscript manager that you like. Then, search "StarTube" on [Greasyfork](https://www.greasyfork.org/en), click on the first or second result, and click "install". Then it should bring you to the userscript installation page, click install, and you're done.
+
+## yt2007player
+
+This userstyle is supposed to bring back the YouTube player from late 2006 to early 2008.
+It doesn't require StarTube to function, but I recommend doing so, for simplicity and looks.
+If you find a bug, which are probably many, first check at the bottom of the code if I already found it, then report it to the Issues tab.
+
+### Version History
+
+*The current version is: Alpha 11215 (December 15 2024)*
+
+## ytchannels1.user.css (previously channels2a.user.css)
+
+This user style is supposed to bring back Channels1, used from 2006 to 2009.
+This userscript requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+If you find a bug, which are probably many, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
 
-_The current version is: Alpha 11130.1 (November 30 2024)._
+_The current version is: Alpha 11215 (December 15 2024)._
 
 - ### Alpha 1116
 > First version
 
 - ### Alpha 11130
-> Added similar customizations to ytaozorachannels.user.css
+> Added similar customizations to ytchannels2.user.css
 >
 > Plenty improvements
 
 - ### Alpha 11130.1
 > Gone base64
 
+- ### Alpha 11215
+> Renamed to ytchannels1.user.css
+
 ## ytstargazerplayer.user.css
 
-*Please note that it's in Alpha, so stuff might be broken or absent. Before reporting a bug, please check the bottom of the code.*
-
-This user style is supposed to bring back YouTube's Stargazer video player (used from 2008 to 2010).
-Before you use this user style, you first need to install Vorapis 3 (just go to vorapis.pages.dev, and follow the instructions). Then, enable the Flash7 player, which is located in the "Video player" menu. It fits well with the 2008-2009 layouts from StarTube Beta.
+This user style is supposed to bring back YouTube's Stargazer video player (used from early 2008 to mid 2010).
+This userstyle doesn't require StarTube, but for simplicity and looks, I recommend doing so.
+If you find a bug, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
 
@@ -49,16 +68,17 @@ _The current version is: Alpha 1116 (November 6 2024)._
 >
 > Fixed some bugs
 
-## ytaozorachannels.user.css
+## ytchannels2.user.css (previously ytaozorachannels.user.css)
 
-**Please note that it's in early development, so things might be broken or unfinished. If you find a bug, please report it to the Issues tab.*
+**Note that I'm currently rewriting this userstyle from the ground up to fix bugs and compatibility issues, sorry for the lack of updates.**
 
-This user style is supposed to bring back the old Channels 2.0 layout (around from 2006 to 2012).
-It requires the Vorapis 3 extension and the StarTube user script to function. It is also required to enable channels3 in StarTube. It's recommended to change the layout to Aozora (2011).
+This user style is supposed to bring back the YouTube Channels 2.0 layout (from late 2009 to early 2012).
+This userscript requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+If you find a bug, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
 ### Version history
 
-_The current version is: Alpha 11013 (13 October 2024)._
+_The current version is: Alpha 11215 (December 15 2024)._
 
 - ### Alpha 1713
 > First version
@@ -78,6 +98,9 @@ _The current version is: Alpha 11013 (13 October 2024)._
 >
 > Modified some other things in the code to make it compatible with the new V3 and StarTube updates
 
+- **Alpha 11215**
+> Renamed to ytchannels2.user.css
+
 ## yt2010comments.user.css
 
 **After StarTube version 2.2 came out, this userstyle is now obsolete**
@@ -93,16 +116,19 @@ _The current version is: Dev 1715 (15 July 2024)._
 > First version
 
 - **Alpha 1206.2** Added a bunch of changes under the hood (note that it has a bug that places the reply button to the bottom)
+  
 - **Alpha 1621**
 > The version numbering has been changed;
 >
 > The reply button position bug (refer to the post in Issues) has been fixed;
 > 
 > Buncha more changes to make it more accurate.
+
 - **Alpha 1621.2**
 > The like & dislike thread icons are now similar to their 2010 counterparts;
 > 
 > A new settings menu has been added, although it doesn't do anything _yet_.
+
 - **Alpha 1622**
 > You can finally comment properly (sorta);
 >
