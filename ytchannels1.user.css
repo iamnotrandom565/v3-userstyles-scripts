@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           YouTube Channels1
+@name           YouTube channels1
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
 @version        11215
 @description    Channels1 (used from 2006-2009) (only works with V3 + StarTube)
@@ -7,7 +7,7 @@
 @license        no-license
 @homepageURL    https://github.com/iamnotrandom565/v3-userstyles-scripts
 @supportURL     https://github.com/iamnotrandom565/v3-userstyles-scripts/issues
-@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/raw/refs/heads/main/yt2006channels.user.css
+@updateURL      https://github.com/iamnotrandom565/v3-userstyles-scripts/raw/refs/heads/main/ytchannels1.user.css
 @preprocessor   less
 @var            select          subStyle                    "Select the subcribe button style:"                         ["2006", "2007", "StarTubeDefault"]
 @var            select          cFont                       "Channel font"                                              ["Arial*", "Courier New", "Georgia", "Times New Roman", "Verdana"]
