@@ -8,6 +8,11 @@
 - Q: This userstyle doesn't work!1!
 - A: Do you have Vorapis 3? Then install it from [here](https://vorapis.pages.dev) and follow the instructions. Some of my userstyles also require StarTube. But to install that, you need to install [TamperMonkey](https://www.tampermonkey.net), or any other userscript manager that you like. Then, search "StarTube" on [Greasyfork](https://www.greasyfork.org/en), click on the first or second result, and click "install". Then it should bring you to the userscript installation page, click install, and you're done.
 
+- Q: Can you make this userstyle???
+- A: I'll consider it, but if you spam that, then unfortunately I won't.
+
+  
+
 ## yt2007player.user.css
 
 This userstyle is supposed to bring back the YouTube player from late 2006 to early 2008.
@@ -32,7 +37,14 @@ If you find a bug, which are probably many, first check at the bottom of the cod
 
 ### Version history
 
-_The current version is: Alpha 11215 (December 15 2024)._
+_The current version is: Alpha 11216 (December 16 2024)._
+
+- ### Alpha 11215
+> First version
+
+- ### Alpha 11216
+> A minor update
+- When the scrubber is hovered, it turns red.
 
 - ### Alpha 1116
 > First version
