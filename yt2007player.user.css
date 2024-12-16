@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube 2007 Player
 @namespace      github.com/iamnotrandom565/v3-userstyles-scripts
-@version        11215
+@version        11216
 @description    2007 player for Vorapis V3
 @author         Iamnotrandom565
 @license        no-license
@@ -289,6 +289,9 @@
                     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACTElEQVR4XpXUy0tqURQGcP8nwRwERkhSYtEkTSjUiWlRg1LwhY8gyYEpgkigDSqCXvQY+GiggjPBmehIcaY48zEz12Ut2PueR8a9H/wQPJ7vePZe5ygU/xAQRHrsvyIsWhTpOQszn89B6vv7+0ez2YxIO0SZTqcwmUxkrFYrNx6PRUajEZF2UYbDIQgdHBzI2O12kcFgwPX7fXlxr9cD5uTkROT4+HihbrfLdTqdv8XtdhtarRZxu93c2dkZGI1G0Gq1sLy8DCsrK2AymcDlcnH4m2azyfHSRqMBTCAQAL/fD16vFwwGA2xvb0MkEoF4PA7hcBg2NzdhfX0dfD4fV6/XRai0VqsBc35+Tvb392FjYwOCwaDM2toabRpejKlWq5zi6+sLSqUSicViHN7q3t6ebHPQ7u4u6HQ6uLy85AqFAuTzeaJ4f38H9Pb2BslkklOr1XT7W1tbMnq9HjQaDSQSCbi6uiKvr6/k5eUFFA8PD8BkMhkOb1GlUsHS0pIMfo/F6XSau7u742hNs9ksoJubG8jlcgTHRalULnR6ekrnMNfX1xyVplIpYO7v7wlecWdnR1aGS2I2m+H29lb073ApGCrFjWEL/vz8zD09PYHH46ExWl1dpU8cocfHRzrGRKNRcnFxQag0FAoBYiPz+flJPj4+fsU2GWeboUIW9hSxJ6VYLC6E48Pg2jKiQpajoyNgDg8PoVKpyJTLZeJ0OkUcDsfPpRibzQaM8JUnZLFYZKQ9suBLQwhfKlI4GUh67q/BnRbCUZKSnsPyB1qvnM118z1bAAAAAElFTkSuQmCC') no-repeat center center !important;
                     transform: translateY(-10%);
                 }
+                & .html5-scrubber-button:hover::before {
+                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACiElEQVR4XpXUO0gjQRwG8JR2oo2KFmKhiAiCIAg2toIPFDRaGS0UY7TRpFB8xMLH4SVCjEqi6BkxJpIQwUNJQAnYCVaKFnd6NhIJdwfxURzxu5n/MXOb3eQeH/yYYjPfbmZmV6f7h0AR9bX/irIoU9RzMkY9keft7S2tZDJJ1B0peXl5wfPzs4bBYEB3dzd5enpKkUgkiLqLEo/HodTf30/6+voyenx8JLFYjKg7dff39xCGh4cxNDT0VyaTCXd3d9Lt7e3v4pubG1xfX5PR0VHJzFgbGvC+pASuggIarY2NGBkZSXF1dSXJ0ouLCwjj4+O/jI3BVlGBYE0NPu/t4fvlJT7t7sKRn4/FqiqMsevC+fl5Cio9OzuDMDMzQxbZE4UqK5E8OgIiEenH4SGWCwvxrq0NVquVTE9PIxqNSroI+2E4HCYLCwuSs6gID2zXMTmp8aWrC8tsKebn5zE3N0eO2M0F3cHBAbhQKISlpSVit9vhzsrCa10dUF+vkaitxWpuLmw2mxQMBkkgEIDO6/VCWFlZkdbYxsTLy4Hqao2HsjKsFhfD6XRKOzs7Eq3pxsYG1NwtLQjn5GgKuY/Z2XB1dGB9fV1yuVwSlTocDgjyjpubcJeWIsL+5jd2CnjZVza62ehmo2drCx6PB9vb20QsHUelyg3a398nfr8fPla+1doKd14e1thnwcXGD+3t8LOj5fP5JLFZs7OzhEr5keCmpqaI2LxM+KYqTUxMSFQoYrFYwJnNZnJ8fKyhPDaC8s1KKRTh77IwODiI09NTcnJyomE0GlMMDAykL+Xp7e2F0NPTkxb/FKqpezTp7OyEoNfr0+pgR4pTz/1jmpubodTU1KShniPyE0DyuYvQmXwhAAAAAElFTkSuQmCC') !important;
+                    }
             }
         }
         
@@ -304,6 +307,7 @@
         Severity: minor
     
         TO DO
+        - Implement the "Loading..." text [.]
         - Make the fullscreen button animated (with GIFs) [.]
     
         LEGEND
