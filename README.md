@@ -70,7 +70,7 @@ If you find a bug, first check at the bottom of the code if I already found it, 
 
 ### Version history
 
-_The current version is: Alpha 1116 (November 6 2024)._
+_The current version is: Alpha 11129 (November 29 2024)._
 
 - ### Alpha 1111
 > First version
