@@ -32,7 +32,7 @@ Also, HUGE thanks to EricKrouss for making the [HTML5 2007 YouTube video player]
 
 - ### Alpha 11216
 > A minor update
-- When the scrubber is hovered, it turns red.
+> When the scrubber is hovered, it turns red.
 
 ## ytchannels1.user.css (previously channels2a.user.css)
 
