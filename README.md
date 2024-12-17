@@ -94,7 +94,7 @@ _The current version is: Alpha 11129 (November 29 2024)._
 
 This user style is supposed to bring back the YouTube Channels 2.0 layout (from late 2009 to early 2012).
 
-This userstyle requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enablind channels3 from there.
+This userstyle requires StarTube. Follow the instructions at the top, then open the StarTube settings, and enable channels3 by either clicking on a layout that's early 2013 and below, or going to "Channel layout" and enabling channels3 from there.
 
 If you find a bug, first check at the bottom of the code if I already found it, then report it to the Issues tab.
 
