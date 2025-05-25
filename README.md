@@ -1,5 +1,9 @@
 # README thing
 
+## NOTE
+
+**This fork is no longer being worked on. But feel free to fork it & improve on my work!**
+
 ## FAQ
 
 - Q: How do I install userstyles?
